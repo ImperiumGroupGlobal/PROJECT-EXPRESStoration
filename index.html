@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Advanced SEO & Virality Metadata to Trigger Internet-Wide Indexing -->
+    <meta name="description" content="PROJECT EXPRESStoration: An open-source, boardroom-ready blueprint by ImperiumGroup to elevate Express back to the pinnacle of modern retail and nightlife fashion.">
+    <meta name="keywords" content="Express turnaround, WHP Global, Express fashion, ImperiumGroup, retail strategy, fashion corporate overhaul, retail activism, open source business blueprint, Express clothing upgrade, mall retail future">
+    <meta name="author" content="ImperiumGroup">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PROJECT EXPRESSTORATION | The Retail Blueprint">
+    <meta property="og:description" content="The independent, un-compromised operational blueprint engineered to rebuild Express. Zero boring clothes. Immersive music. Total retail excellence.">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PROJECT EXPRESSTORATION | The Retail Blueprint">
+    <meta name="twitter:description" content="The independent, un-compromised operational blueprint engineered to rebuild Express. Zero boring clothes. Immersive music. Total retail excellence.">
+
+    <title>PROJECT EXPRESSTORATION | ImperiumGroup Blueprint</title>
+    
+    <!-- High-End Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Schema for maximum Google Indexing -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "PROJECT EXPRESSTORATION: The Blueprint to Rebuild Express",
+      "author": {
+        "@type": "Organization",
+        "name": "ImperiumGroup"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ImperiumGroup"
+      },
+      "description": "An open-source activist blueprint to rescue a legendary fashion fortress from corporate neglect, focusing on immersive music, vibrant clothing, and ground-floor excellence."
+    }
+    </script>
+
+    <style>
+        /* Base Variables & Reset */
+        :root {
+            --bg: #030303;
+            --fg: #ffffff;
+            --muted: #888888;
+            --border: #222222;
+            --accent: #e5e5e5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--fg);
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, .display-font {
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+
+        .mono-label {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            color: var(--muted);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-up.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Grain Overlay */
+        .noise {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(3, 3, 3, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .brand-lockup {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 0.1em;
+        }
+
+        /* Nav Logo */
+        .brand-lockup img {
+            height: 32px; 
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .cross {
+            color: #444;
+            font-weight: 300;
+            font-size: 1rem;
+        }
+
+        .nav-links a {
+            color: var(--fg);
+            text-decoration: none;
+            font-size: 0.8rem;
+            margin-left: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--muted);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8rem 4rem 4rem 4rem;
+            position: relative;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* Big Homepage Logo */
+        .hero-brand-logo {
+            height: 80px;
+            width: auto;
+            margin-bottom: 3rem;
+            display: block;
+            object-fit: contain;
+        }
+
+        .hero h1 {
+            font-size: clamp(3.5rem, 8vw, 8rem);
+            line-height: 0.9;
+            margin-bottom: 2rem;
+            max-width: 1300px;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: var(--accent);
+            max-width: 750px;
+            font-weight: 300;
+        }
+
+        /* The Constructive Directive */
+        .open-letter {
+            background-color: var(--fg);
+            color: var(--bg);
+            padding: 8rem 4rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .open-letter-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .open-letter h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 2.5rem;
+            line-height: 1.1;
+        }
+
+        .open-letter p {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            color: #111;
+        }
+
+        /* Grid Layouts */
+        .section-container {
+            padding: 8rem 4rem;
+            border-bottom: 1px solid var(--border);
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 5rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        /* Cards */
+        .metric-card {
+            border: 1px solid var(--border);
+            padding: 3.5rem 2.5rem;
+            background: #080808;
+            transition: border-color 0.3s ease;
+        }
+
+        .metric-card:hover {
+            border-color: #555;
+        }
+
+        .metric-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .metric-card p {
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        /* Chapter Layout */
+        .chapter-title {
+            position: sticky;
+            top: 140px;
+        }
+
+        .chapter-title h2 {
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            line-height: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .chapter-body .block {
+            margin-bottom: 4.5rem;
+            padding-bottom: 4.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .chapter-body .block:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .chapter-body h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1.25rem;
+            color: var(--fg);
+        }
+
+        .chapter-body p {
+            color: #aaaaaa;
+            font-size: 1.15rem;
+        }
+
+        /* Process Flowchart */
+        .process-flow {
+            background: #000;
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            margin: 2rem 0 4rem 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+        }
+
+        .flow-line {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .flow-line:last-child {
+            margin-bottom: 0;
+        }
+
+        .badge {
+            background: var(--fg);
+            color: var(--bg);
+            padding: 6px 12px;
+            font-weight: bold;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+        }
+
+        .arrow {
+            color: #444;
+        }
+
+        /* Launch Signage */
+        .signage-banner {
+            padding: 12rem 4rem;
+            text-align: center;
+            background: #080808;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .signage-banner h2 {
+            font-size: clamp(3rem, 8vw, 10rem);
+            margin-bottom: 3rem;
+            line-height: 0.85;
+        }
+
+        .signage-banner p {
+            font-size: clamp(1.2rem, 2vw, 2.2rem);
+            max-width: 1000px;
+            margin: 0 auto;
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--accent);
+            line-height: 1.4;
+        }
+
+        /* Footer & Viral CTA */
+        .cta-section {
+            padding: 8rem 4rem;
+            text-align: center;
+            background: var(--bg);
+        }
+
+        .share-btn {
+            display: inline-block;
+            padding: 1.25rem 3.5rem;
+            background: var(--fg);
+            color: var(--bg);
+            text-decoration: none;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: background 0.2s;
+            margin-top: 3rem;
+        }
+
+        .share-btn:hover {
+            background: #cccccc;
+        }
+
+        footer {
+            padding: 4rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        .footer-disclaimer {
+            max-width: 600px;
+            text-align: right;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+            .chapter-title {
+                position: relative;
+                top: 0;
+                margin-bottom: 2rem;
+            }
+            .hero {
+                padding: 8rem 2rem 4rem 2rem;
+            }
+            .hero-brand-logo {
+                height: 50px;
+            }
+            .section-container, .open-letter, .signage-banner, .cta-section {
+                padding: 5rem 2rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            nav {
+                padding: 1.25rem 2rem;
+            }
+            footer {
+                flex-direction: column;
+                gap: 2rem;
+                padding: 3rem 2rem;
+                text-align: left;
+            }
+            .footer-disclaimer {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Noise Texture Overlay -->
+    <div class="noise"></div>
+
+    <!-- Top Navigation -->
+    <nav>
+        <div class="brand-lockup">
+            IMPERIUMGROUP <span class="cross">✕</span> 
+            <img src="Express_Clothing_Logo.SVG.png" alt="Express">
+        </div>
+        <div class="nav-links">
+            <a href="#memo">The Directive</a>
+            <a href="#blueprint">The Blueprint</a>
+            <a href="#about">About</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="fade-up">
+            <!-- Big Front-and-Center Logo -->
+            <img src="Express_Clothing_Logo.SVG.png" class="hero-brand-logo" alt="Express Logo">
+            
+            <span class="mono-label">Open-Source Blueprint Deployment // 2026</span>
+            <h1>PROJECT<br>EXPRESSTORATION</h1>
+            <p>An independent, un-compromised operational blueprint engineered to step in and elevate a legendary fashion fortress back to its rightful place at the pinnacle of modern retail culture.</p>
+        </div>
+    </section>
+
+    <!-- The Constructive Directive (Visionary Tone) -->
+    <section class="open-letter" id="memo">
+        <div class="open-letter-content fade-up">
+            <span class="mono-label" style="color: #666;">Public Directive // Attn: WHP Global & Executive Board</span>
+            <h2>WE ARE STEPPING IN TO HELP BUILD THE FUTURE OF EXPRESS.</h2>
+            <p>We believe in the immense cultural power of this institution. Where standard corporate strategy may see a spreadsheet to be optimized, we see a legendary retail fortress waiting to be reawakened.</p>
+            <p>Because the brand's current trajectory relies heavily on traditional cost-cutting, ImperiumGroup has independently stepped in to do the heavy lifting. Out of a profound desire to see this brand dominate once again, we have engineered the aesthetic vision, the hyper-responsive supply chain strategy, and the operational footprint required to reclaim the market.</p>
+            <p>This is not a critique—it is a contribution. We have designed this roadmap to do the work for you. The blueprint is boardroom-ready, deeply researched, and completely free. The strategy is yours. Let's rebuild the fortress.</p>
+        </div>
+    </section>
+
+    <!-- Executive Summary / Three Pillars -->
+    <section class="section-container" id="blueprint">
+        <div class="fade-up" style="margin-bottom: 5rem;">
+            <span class="mono-label">Phase 00 // Restructuring Strategy</span>
+            <h2>The Three Pillars</h2>
+        </div>
+        
+        <div class="grid-3 fade-up">
+            <div class="metric-card">
+                <span class="mono-label">Pillar I</span>
+                <h3>PHYSICAL RESURRECTION</h3>
+                <p>Executing an environmental audit to restore the brand's atmospheric identity. Dimmed mood lighting and a high-fidelity music overhaul will recreate the elite architectural aesthetic of a late-night fortress.</p>
+            </div>
+            <div class="metric-card">
+                <span class="mono-label">Pillar II</span>
+                <h3>INFRASTRUCTURE RESET</h3>
+                <p>Elevating ground-floor operations. Implementing automated overnight cleaning contracts and raising District Manager structural standards to guarantee a consistently pristine shopping environment.</p>
+            </div>
+            <div class="metric-card">
+                <span class="mono-label">Pillar III</span>
+                <h3>CLOTHING LIBERATION</h3>
+                <p>Completely overhauling the product lines. Erasing boring, stagnant clothing and instantly injecting trendy, modern, bold, and vibrant nightlife fashion back into the brand DNA.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter 1: Atmosphere -->
+    <section class="section-container grid-2 fade-up">
+        <div class="chapter-title">
+            <span class="mono-label">Chapter 01</span>
+            <h2>ATMOSPHERIC OVERHAUL</h2>
+            <p style="color: var(--muted); margin-top: 1.5rem; max-width: 420px;">The physical storefront must instantly project the illusion of an elite, high-fashion gallery space the second a shopper approaches from the concourse.</p>
+        </div>
+        <div class="chapter-body">
+            <div class="block">
+                <h3>MUSIC & AUDIO UPGRADES</h3>
+                <p><strong>Sound System Integrity & Sub-Bass:</strong> All locations must immediately audit their audio equipment. Ensure systems are fully functional and that volumes are set to a vibrant, immersive level tailored for house music. Store hardware must be capable of producing rich sub-bass. If a location's current equipment cannot handle deep bass frequencies, mandate an immediate hardware upgrade.</p>
+                <br>
+                <p><strong>Audio Curation Shift:</strong> Transitioning the corporate audio feed away from standard acoustic playlists and into continuous, non-stop loops of vocal house, deep tech-house, and high-energy runway rhythms to sustain shopping momentum.</p>
+            </div>
+            <div class="block">
+                <h3>VISUAL AMBIANCE TUNING</h3>
+                <p><strong>The Runway Dim:</strong> Replacing clinical corporate fluorescent glare with a deeply intentional, mood-driven lighting strategy.</p>
+                <br>
+                <p><strong>Spotlight Merchandising:</strong> Implementing focused, warm LED spotlights directly over primary clothing displays, crafting a sleek, exclusive environment that naturally draws the eye to the product.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter 2: Product (Updated for Vibrant / Nightlife Fashion) -->
+    <section class="section-container grid-2 fade-up">
+        <div class="chapter-title">
+            <span class="mono-label">Chapter 02</span>
+            <h2>MODERN & BOLD CLOTHING OVERHAUL</h2>
+            <p style="color: var(--muted); margin-top: 1.5rem; max-width: 420px;">We are replacing the standard 6-month corporate planning lifecycle with an instant-pivot model designed to capture modern consumer velocity and bold style.</p>
+        </div>
+        <div class="chapter-body">
+            
+            <div class="process-flow">
+                <div class="flow-line">
+                    <span class="badge" style="background:#333; color:#aaa;">LEGACY MODEL</span> 
+                    <span class="arrow">──►</span> Boring Essentials 
+                    <span class="arrow">──►</span> Lost Momentum
+                </div>
+                <div class="flow-line" style="margin-top: 1.5rem;">
+                    <span class="badge">EXPRESSTORATION</span> 
+                    <span class="arrow">──►</span> Nightlife & Bold Fashion 
+                    <span class="arrow">──►</span> Immediate Sell-Outs
+                </div>
+            </div>
+
+            <div class="block">
+                <h3>ZERO BORING CLOTHES POLICY</h3>
+                <p>Liquidate all uninspired, dull essentials immediately. The floor plan must be completely cleared of anything that feels stagnant or dated, making room for pieces that allow the brand to visually dominate competitors.</p>
+            </div>
+            <div class="block">
+                <h3>THE RETURN OF NIGHTLIFE FASHION</h3>
+                <p>Utilizing highly responsive manufacturing partnerships to immediately inject trendy, modern, vibrant, and bold pieces into the lineup. We must bring back the core nightlife fashion and premium fashion-forward cuts that gave the brand its original powerful edge.</p>
+            </div>
+            <div class="block">
+                <h3>THE PRICE-TO-VALUE EQUATION</h3>
+                <p>Calibrating sale items to intelligently undercut mid-tier competitors, ensuring casual wanderers instantly recognize the value and swap their brand loyalty on the spot.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter 3: Logistics -->
+    <section class="section-container grid-2 fade-up">
+        <div class="chapter-title">
+            <span class="mono-label">Chapter 03</span>
+            <h2>TECHNICAL LOGISTICS</h2>
+            <p style="color: var(--muted); margin-top: 1.5rem; max-width: 420px;">Dismantling outdated administrative friction, allowing internal teams to focus entirely on elevating the customer experience.</p>
+        </div>
+        <div class="chapter-body">
+            <div class="block">
+                <h3>NEXT-GEN POS TECH STACK</h3>
+                <p><strong>The Register Software Upgrade:</strong> Phasing out lagging legacy point-of-sale software in favor of modern, lightning-fast architecture.</p>
+                <br>
+                <p><strong>15-Second Transactions:</strong> Equipping cash wrap systems with an intuitive, single-swipe cloud interface to melt away lines instantly during peak hours.</p>
+                <br>
+                <p><strong>Self-Service Return Kiosks:</strong> Automating the exchange and return process through digital touchscreens, removing return-friction and freeing up staff for sales.</p>
+            </div>
+            <div class="block">
+                <h3>OPERATIONAL EXCELLENCE</h3>
+                <p><strong>Automated Corporate Cleaning:</strong> Transitioning core cleaning responsibilities from sales staff to professional overnight crews to keep tiles, mirrors, and fixtures pristine, allowing staff to act exclusively as style curators.</p>
+                <br>
+                <p><strong>The Luxury Curator Culture:</strong> Eliminating high-pressure employee sales scripts. Staff are retrained to act as relaxed, high-fashion curators who maintain the floor and guide the customer journey with absolute professionalism and peace.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signage / Manifesto -->
+    <section class="signage-banner fade-up">
+        <span class="mono-label" style="margin-bottom: 2rem;">Proposed Front Window Launch Signage</span>
+        <h2>WE ARE SORRY.</h2>
+        <p>We lost our way, we let things get quiet, and we forgot our heritage.<br><br>But the music is back, the quality is elevated, and we are officially entering our prime.<br><br>Welcome to the New Era.</p>
+    </section>
+
+    <!-- About / Virality CTA -->
+    <section class="cta-section fade-up" id="about">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">ABOUT IMPERIUMGROUP</h2>
+        <p style="color: var(--muted); max-width: 850px; margin: 0 auto 2rem auto; font-size: 1.2rem;">
+            ImperiumGroup is an independent, open-source collective of fashion futurists, retail strategists, and multi-media creators. We are not corporate liquidators. We are an autonomous, high-discipline activist group dedicated to preserving the cultural heritage, aesthetic architecture, and musical identity of contemporary fashion landscapes.
+        </p>
+        <p style="color: var(--muted); max-width: 850px; margin: 0 auto; font-size: 1.2rem;">
+            We refuse to watch a legendary retail footprint quietly fade. We have done the heavy lifting because we want this brand to win. This site exists to provide an undeniable roadmap for immediate execution, proving that the brand's true value lies in visionary frontline excellence.
+        </p>
+        
+        <!-- Social Action Button to drive Internet Indexing / Virality -->
+        <a href="https://twitter.com/intent/tweet?text=The%20boardroom-ready%20tactical%20blueprint%20to%20rebuild%20Express.%20We%20have%20the%20roadmap.%20Execute%20PROJECT%20EXPRESSTORATION.&url=https://[YOUR-NETLIFY-URL-HERE].netlify.app" target="_blank" class="share-btn">Initiate Butterfly Effect // Share The Blueprint</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-brand">
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: bold; color: #fff; font-size: 1rem;">IMPERIUMGROUP</span><br>
+            <span style="margin-top: 5px; display: inline-block;">2026 // OPEN SOURCE BLUEPRINT</span>
+        </div>
+        <div class="footer-disclaimer">
+            Disclaimer: ImperiumGroup is an independent activist collective and is not affiliated with, endorsed by, or sponsored by Express, Inc. or WHP Global. This public documentation is distributed voluntarily and strictly for the advancement of modern retail strategy.
+        </div>
+    </footer>
+
+    <!-- Intersection Observer Script for Fade Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-up').forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+
+</body>
+</html>
