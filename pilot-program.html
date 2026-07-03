@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="msvalidate.01" content="10618B6CCC5487026C05ADA413F68269" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="The full phased pilot rollout plan behind PROJECT EXPRESStoration: store selection criteria, per-phase KPIs, decision gates, and rollback criteria for a low-CapEx Express turnaround test.">
+    <meta name="keywords" content="retail pilot program, phased rollout plan, store selection criteria, retail KPI, CapEx de-risking, Express turnaround pilot">
+    <meta name="author" content="ImperiumGroupGlobal">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://project-expresstoration.pages.dev/pilot-program.html">
+
+    <title>The Pilot Program | ImperiumGroup</title>
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Pilot Program | ImperiumGroup">
+    <meta property="og:description" content="Store selection criteria, per-phase KPIs, decision gates, and rollback criteria for a low-CapEx Express turnaround pilot.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "headline": "The Pilot Program",
+      "creator": { "@type": "Organization", "name": "ImperiumGroupGlobal" },
+      "publisher": { "@type": "Organization", "name": "ImperiumGroupGlobal" },
+      "about": "Phased retail pilot rollout plan",
+      "description": "Store selection criteria, per-phase KPIs, decision gates, and rollback criteria for ImperiumGroup's proposed low-CapEx Express turnaround pilot.",
+      "isPartOf": "https://project-expresstoration.pages.dev/",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #000000; --fg: #ffffff; --muted: #888888; --border: #222222;
+            --neon-red: #ff003c; --neon-cyan: #00f3ff; --grid: rgba(255, 255, 255, 0.04);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--bg); color: var(--fg);
+            font-family: 'Inter', -apple-system, sans-serif; line-height: 1.6;
+            -webkit-font-smoothing: antialiased; overflow-x: hidden;
+            background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        a { color: inherit; }
+        :focus-visible { outline: 2px solid var(--neon-cyan); outline-offset: 3px; }
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; text-transform: uppercase; letter-spacing: -0.02em; }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+        .mono-label {
+            font-family: 'Courier New', Courier, monospace; font-size: 0.75rem; letter-spacing: 0.15em;
+            color: var(--muted); text-transform: uppercase; display: block; margin-bottom: 0.75rem;
+        }
+
+        .independence-strip {
+            width: 100%; background: #050505; border-bottom: 1px solid var(--border);
+            padding: 0.65rem 3rem; text-align: center; font-family: 'Courier New', monospace;
+            font-size: 0.72rem; letter-spacing: 0.08em; color: #999; position: relative; z-index: 101;
+        }
+        .independence-strip strong { color: var(--neon-cyan); font-weight: 700; }
+
+        nav {
+            position: sticky; top: 0; width: 100%; padding: 1.4rem 3rem; display: flex;
+            justify-content: space-between; align-items: center; z-index: 100;
+            background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);
+        }
+        .brand-lockup {
+            display: flex; align-items: baseline; gap: 0.9rem; font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700; font-size: 1.1rem; letter-spacing: 0.08em; text-decoration: none;
+        }
+        .brand-lockup .divider { color: #333; font-weight: 300; }
+        .brand-lockup .target-name {
+            font-family: 'Courier New', monospace; font-size: 0.85rem; font-weight: 400;
+            letter-spacing: 0.15em; color: var(--muted); border: 1px solid var(--border); padding: 3px 8px;
+        }
+        .nav-links {
+            display: flex; gap: 2.25rem; font-family: 'Courier New', monospace;
+            font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+        }
+        .nav-links a { text-decoration: none; color: #888; transition: color 0.2s ease; }
+        .nav-links a:hover, .nav-links a:focus-visible { color: var(--fg); }
+        .nav-links a.current { color: var(--neon-cyan); }
+        .terminal-header-text { font-family: 'Courier New', monospace; font-size: 0.75rem; color: #555; letter-spacing: 0.05em; }
+
+        .page-hero { padding: 6rem 4rem 5rem 4rem; border-bottom: 1px solid var(--border); max-width: 1000px; }
+        .page-hero h1 { font-size: clamp(2.6rem, 6vw, 5rem); line-height: 0.95; margin-bottom: 1.5rem; }
+        .page-hero p { font-size: clamp(1.05rem, 1.6vw, 1.25rem); color: #E0E0E0; max-width: 700px; }
+
+        .section-container { padding: 6rem 4rem; border-bottom: 1px solid var(--border); max-width: 1300px; margin: 0 auto; }
+        .section-heading { margin-bottom: 3rem; max-width: 750px; }
+        .section-heading h2 { font-size: clamp(1.9rem, 3vw, 2.6rem); margin-bottom: 1.25rem; }
+        .section-heading p { color: var(--muted); font-size: 1.05rem; }
+
+        .status-badge {
+            display: inline-block; font-family: 'Space Grotesk', sans-serif; font-size: 0.75rem;
+            font-weight: 700; padding: 4px 10px; border: 1px solid var(--neon-cyan); color: var(--neon-cyan);
+            text-shadow: 0 0 8px rgba(0,243,255,0.4); margin-left: 10px; vertical-align: middle;
+            background: rgba(0, 243, 255, 0.05);
+        }
+        .status-badge.red { border-color: var(--neon-red); color: var(--neon-red); text-shadow: 0 0 8px rgba(255,0,60,0.4); background: rgba(255, 0, 60, 0.05); }
+        .status-badge.white { border-color: #fff; color: #fff; background: rgba(255,255,255,0.1); }
+
+        /* Timeline rail */
+        .timeline-rail {
+            display: flex; justify-content: space-between; margin-bottom: 4rem;
+            border-top: 2px solid var(--border); position: relative; padding-top: 1.5rem;
+        }
+        .timeline-rail .tick {
+            flex: 1; text-align: left; position: relative; padding-right: 1rem;
+        }
+        .timeline-rail .tick::before {
+            content: ''; position: absolute; top: -1.6rem; left: 0; width: 10px; height: 10px;
+            background: var(--neon-cyan); border-radius: 50%; box-shadow: 0 0 8px rgba(0,243,255,0.6);
+        }
+        .timeline-rail .tick .day { font-family: 'Courier New', monospace; font-size: 0.75rem; color: var(--neon-cyan); display: block; margin-bottom: 4px; }
+        .timeline-rail .tick .label { font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; text-transform: uppercase; color: #ccc; }
+
+        /* Phase block */
+        .phase-block { padding: 4rem 0; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 240px 1fr; gap: 3.5rem; }
+        .phase-block:last-child { border-bottom: none; }
+        .phase-meta { position: sticky; top: 100px; align-self: start; }
+        .phase-meta .phase-num { font-family: 'Space Grotesk', sans-serif; font-size: 3rem; color: #222; font-weight: 700; line-height: 1; }
+        .phase-meta h3 { font-size: 1.3rem; margin-top: 0.75rem; }
+        .phase-meta .phase-window { font-family: 'Courier New', monospace; font-size: 0.78rem; color: var(--muted); margin-top: 0.5rem; display: block; }
+
+        .phase-block p { color: #aaa; font-size: 1.05rem; margin-bottom: 1.25rem; }
+
+        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin: 1.75rem 0; }
+        .kpi-box { border: 1px solid var(--border); background: rgba(10,10,10,0.8); padding: 1.5rem; }
+        .kpi-box .kpi-metric { font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; color: var(--fg); display: block; margin-bottom: 6px; }
+        .kpi-box .kpi-target { font-family: 'Courier New', monospace; font-size: 0.78rem; color: var(--neon-cyan); }
+
+        .gate-box {
+            background: #050505; border-left: 2px solid var(--neon-red); padding: 1.5rem 2rem; margin-top: 1.5rem;
+        }
+        .gate-box .mono-label { color: var(--neon-red); }
+        .gate-box p { margin-bottom: 0; color: #bbb; }
+
+        /* Selection criteria table */
+        .criteria-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        .criteria-table th, .criteria-table td { text-align: left; padding: 1.1rem 1.25rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+        .criteria-table th { font-family: 'Courier New', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 400; }
+        .criteria-table td { font-size: 0.95rem; color: #ccc; }
+        .criteria-table td.crit-name { color: var(--fg); font-weight: 600; }
+
+        /* Rollback section */
+        .rollback-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .rollback-card { border: 1px solid var(--neon-red); background: rgba(255,0,60,0.03); padding: 2rem; }
+        .rollback-card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--neon-red); }
+        .rollback-card p { color: #aaa; font-size: 0.95rem; margin: 0; }
+
+        .cta-inline {
+            display: inline-block; padding: 0.9rem 2rem; background: transparent; color: var(--neon-cyan);
+            border: 1px solid var(--neon-cyan); font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+            font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none;
+            transition: all 0.3s ease; margin-top: 1rem; margin-right: 1rem;
+        }
+        .cta-inline:hover, .cta-inline:focus-visible { background: var(--neon-cyan); color: #000; }
+        .cta-inline.ghost { color: var(--fg); border-color: #444; }
+        .cta-inline.ghost:hover, .cta-inline.ghost:focus-visible { background: var(--fg); color: #000; }
+
+        footer {
+            padding: 3.5rem 4rem; border-top: 1px solid var(--border); display: flex;
+            justify-content: space-between; align-items: flex-start; font-size: 0.85rem;
+            color: #555; background: var(--bg); gap: 2rem; flex-wrap: wrap;
+        }
+        footer .footer-links { display: flex; gap: 1.75rem; font-family: 'Courier New', monospace; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
+        footer .footer-links a { text-decoration: none; color: #777; }
+        footer .footer-links a:hover, footer .footer-links a:focus-visible { color: var(--fg); }
+        footer .footer-disclaimer { max-width: 500px; }
+
+        @media (max-width: 1024px) {
+            .page-hero { padding: 4rem 2rem 3rem 2rem; }
+            .section-container { padding: 4rem 2rem; }
+            nav { padding: 1.1rem 1.5rem; }
+            .nav-links { display: none; }
+            .terminal-header-text { display: none; }
+            .timeline-rail { flex-direction: column; gap: 1.5rem; }
+            .timeline-rail .tick::before { top: 0.4rem; }
+            .phase-block { grid-template-columns: 1fr; gap: 1.5rem; }
+            .phase-meta { position: relative; top: 0; }
+            .criteria-table { display: block; overflow-x: auto; white-space: nowrap; }
+            footer { flex-direction: column; gap: 1.75rem; padding: 3rem 2rem; text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="independence-strip">
+        <strong>[ UNOFFICIAL ]</strong> Independent proposal by ImperiumGroup &middot; Not affiliated with, endorsed by, or commissioned by Express, Inc. or WHP Global &middot; <a href="index.html#about">Read the disclosure</a>
+    </div>
+
+    <nav>
+        <a href="index.html" class="brand-lockup">
+            IMPERIUMGROUP
+            <span class="divider">✕</span>
+            <span class="target-name">TARGET: EXPRESS</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html#initiatives">Initiatives</a>
+            <a href="methodology.html">Methodology</a>
+            <a href="precedents.html">Precedents</a>
+            <a href="pilot-program.html" class="current">Pilot Model</a>
+            <a href="faq.html">FAQ</a>
+        </div>
+        <div class="terminal-header-text">REF: EXPR-2026 // OPEN RESOURCE</div>
+    </nav>
+
+    <section class="page-hero">
+        <span class="mono-label" style="color:var(--neon-cyan);">Appendix C</span>
+        <h1>THE PILOT<br>PROGRAM</h1>
+        <p>A single-store, zero-to-low-CapEx test sequence, structured so that every dollar of real capital spend is gated behind evidence from the phase before it — not committee confidence.</p>
+    </section>
+
+    <!-- Timeline overview -->
+    <section class="section-container">
+        <div class="section-heading">
+            <span class="mono-label">180-Day Sequence</span>
+            <h2>THE FULL TIMELINE</h2>
+            <p>Four phases, each gated by the results of the one before it. No phase begins until the prior phase's KPIs are met.</p>
+        </div>
+        <div class="timeline-rail">
+            <div class="tick"><span class="day">DAY 0</span><span class="label">Store Selected</span></div>
+            <div class="tick"><span class="day">DAY 30</span><span class="label">Micro-Pilot Review</span></div>
+            <div class="tick"><span class="day">DAY 90</span><span class="label">Labor Model Review</span></div>
+            <div class="tick"><span class="day">DAY 180</span><span class="label">Kiosk Go/No-Go</span></div>
+            <div class="tick"><span class="day">DAY 180+</span><span class="label">Fleet Decision</span></div>
+        </div>
+    </section>
+
+    <!-- Phase 0: Selection Criteria -->
+    <section class="section-container" style="background:#050505;">
+        <div class="section-heading">
+            <span class="mono-label">Phase 00</span>
+            <h2>PILOT STORE SELECTION CRITERIA</h2>
+            <p>The pilot only produces a usable signal if the store is representative, not cherry-picked. These are the screening criteria before Day 0.</p>
+        </div>
+        <table class="criteria-table">
+            <thead><tr><th>Criterion</th><th>Threshold</th><th>Why It Matters</th></tr></thead>
+            <tbody>
+                <tr>
+                    <td class="crit-name">Sales Performance Tier</td>
+                    <td>Mid-tier store (not top or bottom decile of the fleet)</td>
+                    <td>A top performer would mask the treatment effect; a bottom performer risks confounding results with store-specific decline.</td>
+                </tr>
+                <tr>
+                    <td class="crit-name">Mall Traffic Class</td>
+                    <td>Class A or B regional mall</td>
+                    <td>Matches the traffic profile of the majority of the ~450-store fleet retained post-bankruptcy, for a generalizable result.</td>
+                </tr>
+                <tr>
+                    <td class="crit-name">Store Format</td>
+                    <td>Standard footprint (not a flagship or outlet format)</td>
+                    <td>Flagship and outlet stores have different lighting infrastructure and traffic patterns that would distort comparisons.</td>
+                </tr>
+                <tr>
+                    <td class="crit-name">Management Tenure</td>
+                    <td>Store manager in-role 6+ months</td>
+                    <td>A pilot run by a manager still ramping up introduces execution-quality noise into the result.</td>
+                </tr>
+                <tr>
+                    <td class="crit-name">Existing Fixture Compatibility</td>
+                    <td>Current track lighting rail compatible with LED swap</td>
+                    <td>Preserves the "CapEx: Zero" constraint of Phase 1 — no electrical infrastructure work.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Phases 1-4 -->
+    <section class="section-container">
+        <div class="section-heading">
+            <span class="mono-label">Execution</span>
+            <h2>THE FOUR PHASES</h2>
+        </div>
+
+        <div class="phase-block">
+            <div class="phase-meta">
+                <span class="phase-num">01</span>
+                <h3>THE MICRO-PILOT <span class="status-badge">CAPEX: ZERO</span></h3>
+                <span class="phase-window">Day 0 – Day 30</span>
+            </div>
+            <div>
+                <p>One store. Existing fixture aim adjusted to targeted LED tracking over product displays. In-store audio loop swapped to the reference program. No new hardware, no contractor visit, no capital request — this phase tests direction, not infrastructure.</p>
+                <div class="kpi-grid">
+                    <div class="kpi-box"><span class="kpi-metric">Average Dwell Time</span><span class="kpi-target">Target: +10% vs. trailing 30-day baseline</span></div>
+                    <div class="kpi-box"><span class="kpi-metric">Conversion Rate</span><span class="kpi-target">Target: +5% vs. trailing 30-day baseline</span></div>
+                    <div class="kpi-box"><span class="kpi-metric">Staff-Reported Friction</span><span class="kpi-target">Target: No increase in reported operational issues</span></div>
+                </div>
+                <div class="gate-box">
+                    <span class="mono-label">Gate to Phase 2</span>
+                    <p>Dwell time and conversion targets must both be met. If only one is met, extend Phase 1 by 30 days before proceeding. If neither is met, halt and revert to standard lighting/audio at no further cost.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="phase-block">
+            <div class="phase-meta">
+                <span class="phase-num">02</span>
+                <h3>LABOR REALLOCATION <span class="status-badge white">LOW-COST</span></h3>
+                <span class="phase-window">Day 30 – Day 90</span>
+            </div>
+            <div>
+                <p>Shift a defined share of associate hours from passive folding/restocking tasks to active floor styling and customer engagement. No headcount change — this is a scheduling and task-priority reallocation within existing labor budget.</p>
+                <div class="kpi-grid">
+                    <div class="kpi-box"><span class="kpi-metric">Units Per Transaction</span><span class="kpi-target">Target: +8% vs. Phase 1 baseline</span></div>
+                    <div class="kpi-box"><span class="kpi-metric">Customer-Initiated Interactions</span><span class="kpi-target">Target: Measurable increase, manager-logged</span></div>
+                    <div class="kpi-box"><span class="kpi-metric">Associate Turnover</span><span class="kpi-target">Target: No increase vs. store's trailing average</span></div>
+                </div>
+                <div class="gate-box">
+                    <span class="mono-label">Gate to Phase 3</span>
+                    <p>Units-per-transaction target must be met without an increase in associate turnover — a labor model that boosts sales by burning out staff is not a model worth scaling.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="phase-block">
+            <div class="phase-meta">
+                <span class="phase-num">03</span>
+                <h3>KIOSK DEPLOYMENT <span class="status-badge red">CONDITIONAL</span></h3>
+                <span class="phase-window">Day 90 – Day 180</span>
+            </div>
+            <div>
+                <p>The first phase requiring real capital: one self-service return kiosk and single-swipe POS terminal, installed only if Phases 1 and 2 have both cleared their gates. This is the most expensive and least reversible step in the pilot, which is why it's last.</p>
+                <div class="kpi-grid">
+                    <div class="kpi-box"><span class="kpi-metric">Checkout-Line Abandonment</span><span class="kpi-target">Target: -10% vs. Phase 2 baseline</span></div>
+                    <div class="kpi-box"><span class="kpi-metric">Average Checkout Time</span><span class="kpi-target">Target: -20% for new-sale transactions</span></div>
+                    <div class="kpi-box"><span class="kpi-metric">Kiosk Utilization Rate</span><span class="kpi-target">Target: 40%+ of eligible returns processed via kiosk by Day 150</span></div>
+                </div>
+                <div class="gate-box">
+                    <span class="mono-label">Gate to Fleet Decision</span>
+                    <p>All three KPIs must clear before any fleet-wide capital request is drafted. This phase is explicitly not authorized until Phases 1–2 succeed — capital follows evidence, never the reverse.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="phase-block">
+            <div class="phase-meta">
+                <span class="phase-num">04</span>
+                <h3>FLEET DECISION GATE <span class="status-badge white">REVIEW</span></h3>
+                <span class="phase-window">Day 180+</span>
+            </div>
+            <div>
+                <p>A single consolidated review of all pilot data against every gate above, presented to the capital committee as a go/no-go/expand-scope decision — not a fait accompli. Three outcomes are legitimate: full-fleet rollout, expansion to a second pilot cohort (5–10 stores) for a longer validation window, or termination of the program.</p>
+                <div class="gate-box">
+                    <span class="mono-label">What "Success" Authorizes</span>
+                    <p>A clean pass across Phases 1–3 supports a capital request scoped to Pillar I and Pillar III only, for stores matching the Phase 00 selection profile — not an automatic mandate for every initiative in this proposal. Pillar II (inventory strategy) has its own independent validation path via buying-cycle results, tracked separately from this pilot.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rollback / Risk -->
+    <section class="section-container" style="background:#050505;">
+        <div class="section-heading">
+            <span class="mono-label">Downside Protection</span>
+            <h2>ROLLBACK CRITERIA</h2>
+            <p>What happens if a phase doesn't work — stated up front, not improvised after the fact.</p>
+        </div>
+        <div class="rollback-grid">
+            <div class="rollback-card">
+                <h3>Phase 1 Fails</h3>
+                <p>Revert fixture aim and audio program to prior state. Zero capital was spent, so there is nothing to unwind financially — only the operational reset.</p>
+            </div>
+            <div class="rollback-card">
+                <h3>Phase 2 Fails</h3>
+                <p>Restore prior task scheduling. Any associate feedback suggesting the reallocation model itself (not the atmosphere shift) drove turnover gets flagged for a separate review before any retry.</p>
+            </div>
+            <div class="rollback-card">
+                <h3>Phase 3 Fails</h3>
+                <p>Kiosk hardware is redeployed to a second candidate store for a fresh 90-day test rather than written off — a single-store failure doesn't indict the concept, but it does block scaling until a second data point exists.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-container" style="text-align:center;">
+        <a href="index.html" class="cta-inline">Back to the Proposal</a>
+        <a href="precedents.html" class="cta-inline ghost">Read the Precedents</a>
+    </section>
+
+    <footer>
+        <div class="footer-brand">
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: bold; color: #fff; font-size: 1rem;">IMPERIUMGROUP</span><br>
+            <span style="margin-top: 5px; display: inline-block;">2026 // OPEN SOURCE BLUEPRINT</span>
+        </div>
+        <div class="footer-links">
+            <a href="index.html#initiatives">Initiatives</a>
+            <a href="methodology.html">Methodology</a>
+            <a href="index.html#about">Disclosure</a>
+            <a href="sitemap.xml">Sitemap</a>
+        </div>
+        <div class="footer-disclaimer">
+            ImperiumGroup is an independent collective and is not affiliated with, endorsed by, or sponsored by Express, Inc. or WHP Global. This is an unofficial, speculative proposal distributed for open discussion of retail strategy.
+        </div>
+    </footer>
+
+</body>
+</html>

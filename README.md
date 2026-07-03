@@ -2,7 +2,7 @@
 
 **An independent, open-source retail turnaround proposal for Express, published by ImperiumGroup.**
 
-🔗 Live site: [project-expresstoration.pages.dev/](https://project-expresstoration.pages.dev/)
+🔗 Live site: [project-expresstoration.pages.dev](https://project-expresstoration.pages.dev/)
 
 ---
 
@@ -10,7 +10,7 @@
 
 ImperiumGroup is an independent, pseudonymous collective. This repository and the site it publishes are **not affiliated with, endorsed by, or commissioned by Express, Inc. or WHP Global.** Nothing here is a leaked or official corporate document — it's an unsolicited, speculative strategy proposal, published openly.
 
-Every quantitative claim on the site is labeled by confidence tier (`SOURCED` / `MODELED` / `DIRECTIONAL`) and logged in the [Methodology & Figure Ledger](https://imperiumgroupglobal.github.io/methodology.html). See that page before citing any number from this project elsewhere.
+Every quantitative claim on the site is labeled by confidence tier (`SOURCED` / `MODELED` / `DIRECTIONAL`) and logged in the [Methodology & Figure Ledger](https://project-expresstoration.pages.dev/methodology.html). See that page before citing any number from this project elsewhere.
 
 ---
 
@@ -32,7 +32,7 @@ PROJECT EXPRESStoration is a boardroom-style memorandum — three core strategic
 ├── index.html            # Landing page — overview, three pillars, chapters 01–03
 ├── methodology.html       # Sourcing standard + full figure ledger
 ├── precedents.html        # Comparable-retailer case studies + Express's own bankruptcy record
-├── pilot-program.html     # Full phased rollout plan + KPIs             [planned]
+├── pilot-program.html     # Full phased rollout plan + KPIs
 ├── faq.html                # "Is this official," licensing, etc.        [planned]
 ├── license.html            # Plain-language CC BY 4.0 explainer          [planned]
 ├── sitemap.xml             # Crawl map
@@ -51,43 +51,7 @@ Every page shares one design system (see below) and cross-links to the others vi
 - **Motif:** "Corporate Executive Terminal" — liquid-metal gradients, architectural grids, status badges (`[ CAPEX: ZERO ]`), data-readout callouts
 - **Copy register:** every design or creative decision is translated into financial/operational language (e.g. "Mitigating Checkout-Line Abandonment," not "shorter lines")
 
-No build step — each page is a self-contained `.html` file with inline `<style>` and `<script>`. This is deliberate: it keeps the project trivially forkable and deployable on GitHub Pages with zero tooling.
-
----
-
-## Running locally
-
-No dependencies, no build process. Either:
-
-```bash
-# Just open it directly
-open index.html
-
-# Or serve it (recommended, avoids some browser file:// restrictions)
-python3 -m http.server 8000
-# then visit http://localhost:8000
-```
-
----
-
-## Deploying via GitHub Pages
-
-1. Push this repo to GitHub under the account/org that will host it.
-2. Go to **Settings → Pages**.
-3. Under **Build and deployment**, set **Source** to `Deploy from a branch`.
-4. Select the `main` branch and `/ (root)` folder.
-5. Save. The site will publish to `https://<username>.github.io/<repo>/` (or `https://<username>.github.io/` if this is a root user/org site repo named `<username>.github.io`).
-6. Update `sitemap.xml`, `robots.txt`, and any `<link rel="canonical">` / Open Graph URLs if the final domain differs from `imperiumgroupglobal.github.io`.
-
-A custom domain can be added via **Settings → Pages → Custom domain**, which will also require a `CNAME` file at the repo root.
-
-**Project site vs. user site — why the URL has a subpath.** Because this repo is named `PROJECT-EXPRESStoration` (not `imperiumgroupglobal.github.io`), GitHub Pages treats it as a *project site*, served at:
-
-```
-https://imperiumgroupglobal.github.io/PROJECT-EXPRESStoration/
-```
-
-rather than at the domain root. All internal links in this project use **relative paths** (`methodology.html`, not `/methodology.html`) specifically so the site works correctly at this subpath — don't reintroduce leading-slash absolute paths, or every internal link will 404. If this repo is ever renamed to `imperiumgroupglobal.github.io` (making it a user site at the root domain), the relative links will continue to work unchanged; only `sitemap.xml`, `robots.txt`, and the `<link rel="canonical">` / Open Graph URLs (which are necessarily absolute) would need updating to drop the `/PROJECT-EXPRESStoration/` segment.
+No build step — each page is a self-contained `.html` file with inline `<style>` and `<script>`.
 
 ---
 

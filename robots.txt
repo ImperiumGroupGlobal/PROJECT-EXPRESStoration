@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://imperiumgroupglobal.github.io/PROJECT-EXPRESStoration/sitemap.xml
+Sitemap: https://project-expresstoration.pages.dev/sitemap.xml
