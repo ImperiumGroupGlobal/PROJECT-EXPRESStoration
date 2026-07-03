@@ -2,7 +2,7 @@
 
 **An independent, open-source retail turnaround proposal for Express, published by ImperiumGroup.**
 
-🔗 Live site: [imperiumgroupglobal.github.io/PROJECT-EXPRESStoration](https://imperiumgroupglobal.github.io/PROJECT-EXPRESStoration/)
+🔗 Live site: [project-expresstoration.pages.dev/](https://project-expresstoration.pages.dev/)
 
 ---
 
