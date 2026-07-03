@@ -33,7 +33,7 @@ PROJECT EXPRESStoration is a boardroom-style memorandum — three core strategic
 ├── methodology.html       # Sourcing standard + full figure ledger
 ├── precedents.html        # Comparable-retailer case studies + Express's own bankruptcy record
 ├── pilot-program.html     # Full phased rollout plan + KPIs
-├── faq.html                # "Is this official," licensing, etc.        [planned]
+├── faq.html                # "Is this official," licensing, sourcing Q&A
 ├── license.html            # Plain-language CC BY 4.0 explainer          [planned]
 ├── sitemap.xml             # Crawl map
 ├── robots.txt               # Crawler directives, points to sitemap.xml
