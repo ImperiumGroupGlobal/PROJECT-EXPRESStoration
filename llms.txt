@@ -12,7 +12,7 @@
 - [Precedents & Comparables](https://project-expresstoration.pages.dev/precedents.html) — Publicly sourced comparable-retailer cases and Express's public history used as context.
 - [Pilot Model](https://project-expresstoration.pages.dev/pilot-program.html) — Phased testing model, measurement gates, and rollback logic.
 - [FAQ](https://project-expresstoration.pages.dev/faq.html) — Answers about authorship, independence, sourcing, licensing, and intended use.
-- [Owner / Operator Brief](https://project-expresstoration.pages.dev/stakeholder-brief.html) — Public-record context for PHOENIX Retail, WHP Global, Simon Property Group, Brookfield Properties, and Centennial Real Estate, plus a concise route through the proposal.
+- [Owner / Operator Brief](https://project-expresstoration.pages.dev/owner-operator-brief.html) — Public-record context for PHOENIX Retail, WHP Global, Simon Property Group, Brookfield Properties, and Centennial Real Estate, plus a concise route through the proposal.
 - [License](https://project-expresstoration.pages.dev/license.html) — Reuse and licensing information.
 
 ## Topics
