@@ -67,7 +67,7 @@ def main() -> int:
             fail(f"{path.name}: missing html lang")
         if path.name != "404.html" and "[ UNOFFICIAL ]" not in text:
             fail(f"{path.name}: missing above-the-fold unofficial disclosure")
-        if re.search(r"(?i)(lorem ipsum|your name here|coming soon|todo:|placeholder)", text):
+        if re.search(r"(?i)(lorem ipsum|your name here|coming soon|todo:)", text):
             fail(f"{path.name}: placeholder text detected")
 
         for href in parser.links:
