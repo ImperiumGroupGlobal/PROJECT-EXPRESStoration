@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
+Disallow: /tests/
+Disallow: /.github/
+
+# Explicit search access for AI-powered search systems.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
 
 Sitemap: https://project-expresstoration.pages.dev/sitemap.xml
