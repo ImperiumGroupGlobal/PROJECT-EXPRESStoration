@@ -1,0 +1,32 @@
+/* PROJECT EXPRESStoration — stakeholder brief page UI */
+/* Stakeholder brief */
+.brief-wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem}
+.brief-hero{padding:7rem 0 5rem;border-bottom:1px solid var(--line-soft)}
+.brief-hero h1{font-size:clamp(3rem,7vw,6.5rem);line-height:.92;max-width:9ch;margin:0 0 1.5rem}
+.brief-hero p{max-width:760px;font-size:clamp(1.05rem,1.7vw,1.3rem);color:#c8c8c8}
+.brief-kicker{font:700 .7rem/1.3 "Courier New",monospace;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase;margin-bottom:1.15rem}
+.stakeholder-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin:2.5rem 0 0}
+.stakeholder{border:1px solid var(--line-soft);border-radius:14px;background:rgba(255,255,255,.018);padding:1.35rem;transition:border-color .2s ease,transform .2s ease,background .2s ease}
+.stakeholder:hover{border-color:rgba(0,243,255,.22);transform:translateY(-2px);background:rgba(0,243,255,.018)}
+.stakeholder strong{display:block;font:700 1rem/1.25 "Space Grotesk",sans-serif;text-transform:uppercase}
+.stakeholder span{display:block;color:var(--text-muted);font:.72rem/1.5 "Courier New",monospace;letter-spacing:.05em;margin-top:.45rem}
+.brief-section{padding:5rem 0;border-bottom:1px solid var(--line-soft)}
+.brief-section h2{font-size:clamp(1.8rem,3vw,2.8rem);margin-bottom:1rem}
+.brief-section>p{max-width:800px;color:#aaa}
+.source-panel{margin-top:2rem;border:1px solid var(--line-soft);border-radius:14px;background:#060606;padding:1.5rem}
+.source-panel a{color:var(--cyan);text-decoration:none}
+.source-panel a:hover,.source-panel a:focus-visible{text-decoration:underline}
+.source-row{display:flex;justify-content:space-between;gap:1.5rem;padding:1rem 0;border-bottom:1px solid #171717;flex-wrap:wrap}
+.source-row:last-child{border-bottom:0}
+.source-name{color:#ddd;font-weight:600}
+.review-box{margin-top:2rem;border:1px solid rgba(0,243,255,.25);border-left:3px solid var(--cyan);border-radius:14px;background:linear-gradient(180deg,rgba(0,243,255,.035),rgba(255,255,255,.01));padding:1.5rem}
+.review-box h3{font-size:1.25rem;margin-bottom:.75rem}
+.review-box p{color:#aaa}
+.review-links{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.25rem}
+.review-links .cta-inline{margin-top:0;margin-right:0}
+@media(max-width:1024px){.brief-hero{padding-top:5rem}.brief-wrap{padding:0 1rem}}
+@media(max-width:700px){
+  .stakeholder-grid{grid-template-columns:1fr}
+  .review-links .cta-inline{width:100%;text-align:center}
+}
+
