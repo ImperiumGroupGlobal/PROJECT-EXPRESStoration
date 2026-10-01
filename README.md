@@ -28,8 +28,10 @@ The repository is intentionally simple: there is no application backend, databas
 ├── license.html              # Human-readable license page
 ├── 404.html                  # Branded not-found page
 ├── _headers                  # Cloudflare Pages security headers
-├── robots.txt                # Crawler directives
+├── robots.txt                # Crawler and AI-search directives
 ├── sitemap.xml               # Search-engine sitemap
+├── llms.txt                  # Concise machine-readable content guide
+├── b7c4f19e82a64d91a3f5c07e6d2b8149.txt  # IndexNow verification key
 ├── LICENSE                   # CC BY 4.0 project license notice
 ├── SECURITY.md               # Security reporting and scope
 ├── CONTRIBUTING.md           # Contribution and validation workflow
@@ -55,6 +57,14 @@ Every quantitative claim is assigned one of three confidence tiers:
 - **DIRECTIONAL**: a reasoned estimate where no clean benchmark is available
 
 The full figure ledger and sourcing rules live in [`methodology.html`](methodology.html). Modeled and directional figures are not Express internal data.
+
+## Search and AI discovery
+
+The published site is structured for normal search crawling and AI-assisted search discovery. Every public HTML page has a canonical URL, descriptive metadata, Open Graph and Twitter sharing metadata, and machine-readable Schema.org page relationships. robots.txt exposes the XML sitemap and explicitly permits OAI-SearchBot and PerplexityBot while keeping repository-only test and CI directories out of the crawl surface.
+
+llms.txt provides a compact, factual map of the proposal for clients that support machine-readable site guides. It is a discovery aid, not a guarantee of indexing or search placement. IndexNow notification support is also included for participating search engines.
+
+For Google, Bing, and AI search systems, the site still depends on the normal factors that determine crawling, indexing, relevance, and ranking. Sitemap submission, webmaster verification, and recrawl requests remain useful operational steps outside the repository itself.
 
 ## Security
 
