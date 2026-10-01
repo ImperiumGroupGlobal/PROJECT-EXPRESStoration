@@ -5,7 +5,7 @@
     <meta name="msvalidate.01" content="10618B6CCC5487026C05ADA413F68269" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="How ImperiumGroup sources and labels every estimate in its independent Express turnaround proposal — the sourcing standard and figure ledger.">
+    <meta name="description" content="How ImperiumGroup sources and labels every estimate in its independent Express turnaround proposal - the sourcing standard and figure ledger.">
     <meta name="keywords" content="ImperiumGroup methodology, retail strategy sourcing, estimate confidence framework, independent retail proposal, Express turnaround analysis">
     <meta name="author" content="ImperiumGroupGlobal">
     <meta name="robots" content="index, follow">
@@ -168,8 +168,224 @@
             footer { flex-direction: column; gap: 1.75rem; padding: 3rem 2rem; text-align: left; }
         }
     </style>
+
+        /* 2026 site-system upgrade */
+        ::selection { background: var(--neon-cyan); color: #000; }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 20px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+
+        body { text-rendering: optimizeLegibility; }
+        img, iframe { max-width: 100%; }
+        button, a { -webkit-tap-highlight-color: transparent; }
+
+        .scroll-progress {
+            position: fixed;
+            inset: 0 0 auto 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon-cyan);
+            box-shadow: 0 0 14px rgba(0,243,255,.7);
+            z-index: 1000;
+            transform-origin: left center;
+            pointer-events: none;
+        }
+
+        nav {
+            transition: background .25s ease, border-color .25s ease, padding .25s ease;
+        }
+        nav.scrolled {
+            background: rgba(0,0,0,.94);
+            border-bottom-color: #303030;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .brand-lockup {
+            min-width: 0;
+            white-space: nowrap;
+        }
+        .brand-lockup:hover .target-name,
+        .brand-lockup:focus-visible .target-name {
+            border-color: #444;
+            color: #fff;
+        }
+
+        .nav-links a {
+            position: relative;
+            padding: .4rem 0;
+        }
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 100%;
+            bottom: 0;
+            height: 1px;
+            background: var(--neon-cyan);
+            transition: right .2s ease;
+        }
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after,
+        .nav-links a.current::after { right: 0; }
+
+        .mobile-nav-toggle {
+            display: none;
+            border: 1px solid var(--border);
+            background: #080808;
+            color: #fff;
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            cursor: pointer;
+            font: 700 .72rem/1 monospace;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+        .mobile-nav-toggle:hover,
+        .mobile-nav-toggle:focus-visible {
+            border-color: var(--neon-cyan);
+            color: var(--neon-cyan);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: min(88vw, 360px);
+            height: 100dvh;
+            padding: 92px 1.25rem 2rem;
+            background: rgba(4,4,4,.98);
+            border-left: 1px solid #222;
+            transform: translateX(100%);
+            transition: transform .25s ease;
+            z-index: 999;
+            box-shadow: -30px 0 80px rgba(0,0,0,.45);
+            overflow-y: auto;
+        }
+        .mobile-menu.open { transform: translateX(0); }
+        .mobile-menu-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.56);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .25s ease;
+            z-index: 998;
+        }
+        .mobile-menu-backdrop.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .mobile-menu .menu-kicker {
+            color: var(--neon-cyan);
+            font: 700 .68rem/1.4 monospace;
+            letter-spacing: .14em;
+            margin-bottom: 1rem;
+        }
+        .mobile-menu a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem 0;
+            color: #aaa;
+            text-decoration: none;
+            border-bottom: 1px solid #171717;
+            font: 700 1rem/1.2 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+        }
+        .mobile-menu a:hover,
+        .mobile-menu a:focus-visible,
+        .mobile-menu a.current {
+            color: #fff;
+        }
+        .mobile-menu a span {
+            color: #444;
+            font: .72rem monospace;
+        }
+        body.menu-open { overflow: hidden; }
+
+        .page-shell {
+            width: min(1440px, calc(100% - 2rem));
+            margin: 0 auto;
+        }
+
+        .section-container,
+        .terminal-dashboard,
+        .metric-card,
+        .data-readout,
+        .velvet-rope-module,
+        .faq-item,
+        .tier-card,
+        .phase-block,
+        .rollback-card {
+            transition: border-color .25s ease, background-color .25s ease, transform .25s ease, box-shadow .25s ease;
+        }
+
+        .metric-card:hover,
+        .tier-card:hover,
+        .phase-block:hover,
+        .rollback-card:hover {
+            border-color: #3b3b3b;
+            transform: translateY(-2px);
+        }
+
+        .section-heading h2,
+        .page-hero h1 {
+            text-wrap: balance;
+        }
+
+        .cta-inline:active,
+        .neon-btn:active {
+            transform: translateY(1px);
+        }
+
+        .site-signal-bar {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0,1fr));
+            gap: 1px;
+            margin: 0 auto;
+            max-width: 1100px;
+            border: 1px solid var(--border);
+            background: var(--border);
+        }
+        .site-signal {
+            background: #050505;
+            padding: 1.15rem 1.25rem;
+        }
+        .site-signal strong {
+            display: block;
+            margin-top: .3rem;
+            color: #fff;
+            font: 700 .9rem/1.2 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 1024px) {
+            nav { gap: 1rem; }
+            .mobile-nav-toggle { display: inline-grid; place-items: center; flex: 0 0 auto; }
+            .nav-links { display: none !important; }
+            .site-signal-bar { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 640px) {
+            .brand-lockup { font-size: .9rem; gap: .55rem; }
+            .brand-lockup .divider { display: none; }
+            .brand-lockup .target-name { font-size: .66rem; letter-spacing: .08em; padding: 3px 5px; }
+            .independence-strip { font-size: .62rem; letter-spacing: .05em; line-height: 1.45; }
+            .scroll-progress { height: 3px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            nav, .mobile-menu, .mobile-menu-backdrop, .metric-card, .tier-card,
+            .phase-block, .rollback-card { transition: none !important; }
+        }
+
 </head>
 <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
 
     <div class="independence-strip">
         <strong>[ UNOFFICIAL ]</strong> Independent proposal by ImperiumGroup &middot; Not affiliated with, endorsed by, or commissioned by Express, Inc. or WHP Global &middot; <a href="index.html#about">Read the disclosure</a>
@@ -188,8 +404,20 @@
             <a href="pilot-program.html">Pilot Model</a>
             <a href="faq.html">FAQ</a>
         </div>
+        <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation">MENU</button>
         <div class="terminal-header-text">REF: EXPR-2026 // OPEN RESOURCE</div>
     </nav>
+    <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+    <aside id="mobile-menu" class="mobile-menu" tabindex="-1" aria-label="Mobile navigation">
+        <div class="menu-kicker">NAVIGATION // PROJECT EXPRESSTORATION</div>
+        <a href="index.html"><span>01</span> Proposal</a>
+        <a href="methodology.html"><span>02</span> Methodology</a>
+        <a href="precedents.html"><span>03</span> Precedents</a>
+        <a href="pilot-program.html"><span>04</span> Pilot Model</a>
+        <a href="faq.html"><span>05</span> FAQ</a>
+        <a href="license.html"><span>06</span> License</a>
+    </aside>
+
 
     <section class="page-hero">
         <span class="mono-label" style="color:var(--neon-cyan);">Appendix A</span>
@@ -208,12 +436,12 @@
             <div class="tier-card">
                 <span class="tier-tag sourced">SOURCED</span>
                 <h3>Drawn from public data</h3>
-                <p>Tied to a named, checkable public source — a filing, published industry report, or comparable company's disclosed results. Cited inline where used.</p>
+                <p>Tied to a named, checkable public source - a filing, published industry report, or comparable company's disclosed results. Cited inline where used.</p>
             </div>
             <div class="tier-card">
                 <span class="tier-tag modeled">MODELED</span>
                 <h3>Built from public benchmarks</h3>
-                <p>Calculated by applying general, publicly available industry benchmarks (e.g., fixture efficiency ratings, published conversion-rate studies) to Express's approximate footprint. Not derived from Express's actual internal data — flagged as such at point of use.</p>
+                <p>Calculated by applying general, publicly available industry benchmarks (e.g., fixture efficiency ratings, published conversion-rate studies) to Express's approximate footprint. Not derived from Express's actual internal data - flagged as such at point of use.</p>
             </div>
             <div class="tier-card">
                 <span class="tier-tag directional">DIRECTIONAL</span>
@@ -243,49 +471,49 @@
                     <td class="figure">20–30% reduction in lighting-related utility spend
                         <span class="basis">Basis: published LED-vs-fluorescent fixture efficiency ratings applied to a typical specialty-retail floor plan.</span>
                     </td>
-                    <td>Ch. 01 — Atmospheric CapEx</td>
+                    <td>Ch. 01 - Atmospheric CapEx</td>
                     <td><span class="ledger-tag modeled-tag">MODELED</span></td>
                 </tr>
                 <tr>
                     <td class="figure">10–18% reduction in checkout-line cart abandonment
                         <span class="basis">Basis: general retail-operations literature on return/sale checkout decoupling; no Express-specific traffic data available.</span>
                     </td>
-                    <td>Ch. 03 — Conversion Logistics</td>
+                    <td>Ch. 03 - Conversion Logistics</td>
                     <td><span class="ledger-tag directional-tag">DIRECTIONAL</span></td>
                 </tr>
                 <tr>
                     <td class="figure">Fast-fashion rapid-cycle production reduces dead-stock markdown exposure
                         <span class="basis">Basis: widely reported industry pattern across multiple fast-fashion operators' public disclosures.</span>
                     </td>
-                    <td>Ch. 02 — Inventory Velocity</td>
+                    <td>Ch. 02 - Inventory Velocity</td>
                     <td><span class="ledger-tag modeled-tag">MODELED</span></td>
                 </tr>
                 <tr>
                     <td class="figure">Store-atmosphere-and-assortment turnarounds have preceded valuation recoveries at comparable specialty apparel retailers
                         <span class="basis">Basis: publicly reported financial performance at named comparable retailers following disclosed strategy shifts.</span>
                     </td>
-                    <td>Ch. 02 — Market Validation</td>
+                    <td>Ch. 02 - Market Validation</td>
                     <td><span class="ledger-tag modeled-tag">MODELED</span></td>
                 </tr>
                 <tr>
                     <td class="figure">A&F brand comp sales +23% (FY2023); 2024 remodels drove 20–30% sales-density lift
                         <span class="basis">Basis: S&P Global Ratings commentary via Retail Dive; industry remodel analysis. Named, checkable sources.</span>
                     </td>
-                    <td>Precedents — Abercrombie & Fitch</td>
+                    <td>Precedents - Abercrombie & Fitch</td>
                     <td><span class="ledger-tag sourced-tag">SOURCED</span></td>
                 </tr>
                 <tr>
                     <td class="figure">Zara/Inditex 2–3 week design-to-store cycle; ~15% markdown rate vs. ~30–35% industry norm
                         <span class="basis">Basis: widely reported industry figures, originating from Harvard Business Review analysis, cross-cited across multiple secondary sources.</span>
                     </td>
-                    <td>Precedents — Inditex / Zara</td>
+                    <td>Precedents - Inditex / Zara</td>
                     <td><span class="ledger-tag sourced-tag">SOURCED</span></td>
                 </tr>
                 <tr>
                     <td class="figure">Express Ch. 11 filing (Apr 22, 2024); Phoenix Retail JV acquisition (~$174M, ~450 stores retained)
                         <span class="basis">Basis: SEC 8-K filing; CNBC, Bloomberg, Retail Dive, Retail TouchPoints reporting.</span>
                     </td>
-                    <td>Precedents — Express's Own Record</td>
+                    <td>Precedents - Express's Own Record</td>
                     <td><span class="ledger-tag sourced-tag">SOURCED</span></td>
                 </tr>
             </tbody>
@@ -317,7 +545,7 @@
                 <span class="num">03</span>
                 <div>
                     <h3>The pilot plan exists because the numbers are estimates.</h3>
-                    <p>Every phase of the rollout model is designed to test an assumption at low cost before capital follows it. That's the actual point of a pilot — not a formality.</p>
+                    <p>Every phase of the rollout model is designed to test an assumption at low cost before capital follows it. That's the actual point of a pilot - not a formality.</p>
                 </div>
             </li>
             <li>
@@ -341,11 +569,50 @@
             <a href="pilot-program.html">Pilot Model</a>
             <a href="index.html#about">Disclosure</a>
             <a href="sitemap.xml">Sitemap</a>
+            <a href="license.html">License</a>
+            <a href="SECURITY.md">Security</a>
         </div>
         <div class="footer-disclaimer">
             ImperiumGroup is an independent collective and is not affiliated with, endorsed by, or sponsored by Express, Inc. or WHP Global. This is an unofficial, speculative proposal distributed for open discussion of retail strategy.
         </div>
     </footer>
+
+
+    <script>
+        (() => {
+            const progress = document.querySelector('.scroll-progress');
+            const nav = document.querySelector('nav');
+            const menu = document.querySelector('.mobile-menu');
+            const backdrop = document.querySelector('.mobile-menu-backdrop');
+            const toggle = document.querySelector('.mobile-nav-toggle');
+
+            const updateChrome = () => {
+                const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+                const ratio = scrollable > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollable)) : 0;
+                if (progress) progress.style.width = (ratio * 100) + '%';
+                if (nav) nav.classList.toggle('scrolled', window.scrollY > 12);
+            };
+
+            const setMenu = (open) => {
+                if (!menu || !backdrop || !toggle) return;
+                menu.classList.toggle('open', open);
+                backdrop.classList.toggle('open', open);
+                document.body.classList.toggle('menu-open', open);
+                toggle.setAttribute('aria-expanded', String(open));
+                toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+                if (open) menu.focus();
+            };
+
+            if (toggle) toggle.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+            if (backdrop) backdrop.addEventListener('click', () => setMenu(false));
+            if (menu) menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape') setMenu(false);
+            });
+            window.addEventListener('scroll', updateChrome, { passive: true });
+            updateChrome();
+        })();
+    </script>
 
 </body>
 </html>
