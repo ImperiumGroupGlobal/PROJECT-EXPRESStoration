@@ -103,7 +103,7 @@ def main() -> int:
         fail("robots.txt sitemap is missing or incorrect")
 
     sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
-    for page in ["index.html", "methodology.html", "precedents.html", "pilot-program.html", "faq.html", "license.html"]:
+    for page in ["index.html", "methodology.html", "precedents.html", "pilot-program.html", "faq.html", "license.html", "stakeholder-brief.html"]:
         if page != "index.html" and page not in sitemap:
             fail(f"sitemap.xml missing {page}")
 
@@ -123,6 +123,7 @@ def main() -> int:
         "https://project-expresstoration.pages.dev/pilot-program.html",
         "https://project-expresstoration.pages.dev/faq.html",
         "https://project-expresstoration.pages.dev/license.html",
+        "https://project-expresstoration.pages.dev/stakeholder-brief.html",
     ]:
         if required not in llms:
             fail(f"llms.txt missing canonical URL: {required}")
