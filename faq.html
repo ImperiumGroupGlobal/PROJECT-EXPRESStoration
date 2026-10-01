@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- FAQPage schema — genuine SERP rich-result eligibility -->
+    <!-- FAQPage schema - genuine SERP rich-result eligibility -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -124,7 +124,7 @@
         .section-heading h2 { font-size: clamp(1.7rem, 2.6vw, 2.2rem); margin-bottom: 1.25rem; }
         .section-heading p { color: var(--muted); font-size: 1.02rem; }
 
-        /* FAQ accordion — native <details>, no JS required */
+        /* FAQ accordion - native <details>, no JS required */
         .faq-list { list-style: none; }
         .faq-item {
             border: 1px solid var(--border); background: rgba(10,10,10,0.7);
@@ -180,8 +180,224 @@
             footer { flex-direction: column; gap: 1.75rem; padding: 3rem 2rem; text-align: left; }
         }
     </style>
+
+        /* 2026 site-system upgrade */
+        ::selection { background: var(--neon-cyan); color: #000; }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 20px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+
+        body { text-rendering: optimizeLegibility; }
+        img, iframe { max-width: 100%; }
+        button, a { -webkit-tap-highlight-color: transparent; }
+
+        .scroll-progress {
+            position: fixed;
+            inset: 0 0 auto 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon-cyan);
+            box-shadow: 0 0 14px rgba(0,243,255,.7);
+            z-index: 1000;
+            transform-origin: left center;
+            pointer-events: none;
+        }
+
+        nav {
+            transition: background .25s ease, border-color .25s ease, padding .25s ease;
+        }
+        nav.scrolled {
+            background: rgba(0,0,0,.94);
+            border-bottom-color: #303030;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .brand-lockup {
+            min-width: 0;
+            white-space: nowrap;
+        }
+        .brand-lockup:hover .target-name,
+        .brand-lockup:focus-visible .target-name {
+            border-color: #444;
+            color: #fff;
+        }
+
+        .nav-links a {
+            position: relative;
+            padding: .4rem 0;
+        }
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 100%;
+            bottom: 0;
+            height: 1px;
+            background: var(--neon-cyan);
+            transition: right .2s ease;
+        }
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after,
+        .nav-links a.current::after { right: 0; }
+
+        .mobile-nav-toggle {
+            display: none;
+            border: 1px solid var(--border);
+            background: #080808;
+            color: #fff;
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            cursor: pointer;
+            font: 700 .72rem/1 monospace;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+        .mobile-nav-toggle:hover,
+        .mobile-nav-toggle:focus-visible {
+            border-color: var(--neon-cyan);
+            color: var(--neon-cyan);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: min(88vw, 360px);
+            height: 100dvh;
+            padding: 92px 1.25rem 2rem;
+            background: rgba(4,4,4,.98);
+            border-left: 1px solid #222;
+            transform: translateX(100%);
+            transition: transform .25s ease;
+            z-index: 999;
+            box-shadow: -30px 0 80px rgba(0,0,0,.45);
+            overflow-y: auto;
+        }
+        .mobile-menu.open { transform: translateX(0); }
+        .mobile-menu-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.56);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .25s ease;
+            z-index: 998;
+        }
+        .mobile-menu-backdrop.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .mobile-menu .menu-kicker {
+            color: var(--neon-cyan);
+            font: 700 .68rem/1.4 monospace;
+            letter-spacing: .14em;
+            margin-bottom: 1rem;
+        }
+        .mobile-menu a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem 0;
+            color: #aaa;
+            text-decoration: none;
+            border-bottom: 1px solid #171717;
+            font: 700 1rem/1.2 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+        }
+        .mobile-menu a:hover,
+        .mobile-menu a:focus-visible,
+        .mobile-menu a.current {
+            color: #fff;
+        }
+        .mobile-menu a span {
+            color: #444;
+            font: .72rem monospace;
+        }
+        body.menu-open { overflow: hidden; }
+
+        .page-shell {
+            width: min(1440px, calc(100% - 2rem));
+            margin: 0 auto;
+        }
+
+        .section-container,
+        .terminal-dashboard,
+        .metric-card,
+        .data-readout,
+        .velvet-rope-module,
+        .faq-item,
+        .tier-card,
+        .phase-block,
+        .rollback-card {
+            transition: border-color .25s ease, background-color .25s ease, transform .25s ease, box-shadow .25s ease;
+        }
+
+        .metric-card:hover,
+        .tier-card:hover,
+        .phase-block:hover,
+        .rollback-card:hover {
+            border-color: #3b3b3b;
+            transform: translateY(-2px);
+        }
+
+        .section-heading h2,
+        .page-hero h1 {
+            text-wrap: balance;
+        }
+
+        .cta-inline:active,
+        .neon-btn:active {
+            transform: translateY(1px);
+        }
+
+        .site-signal-bar {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0,1fr));
+            gap: 1px;
+            margin: 0 auto;
+            max-width: 1100px;
+            border: 1px solid var(--border);
+            background: var(--border);
+        }
+        .site-signal {
+            background: #050505;
+            padding: 1.15rem 1.25rem;
+        }
+        .site-signal strong {
+            display: block;
+            margin-top: .3rem;
+            color: #fff;
+            font: 700 .9rem/1.2 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 1024px) {
+            nav { gap: 1rem; }
+            .mobile-nav-toggle { display: inline-grid; place-items: center; flex: 0 0 auto; }
+            .nav-links { display: none !important; }
+            .site-signal-bar { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 640px) {
+            .brand-lockup { font-size: .9rem; gap: .55rem; }
+            .brand-lockup .divider { display: none; }
+            .brand-lockup .target-name { font-size: .66rem; letter-spacing: .08em; padding: 3px 5px; }
+            .independence-strip { font-size: .62rem; letter-spacing: .05em; line-height: 1.45; }
+            .scroll-progress { height: 3px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            nav, .mobile-menu, .mobile-menu-backdrop, .metric-card, .tier-card,
+            .phase-block, .rollback-card { transition: none !important; }
+        }
+
 </head>
 <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
 
     <div class="independence-strip">
         <strong>[ UNOFFICIAL ]</strong> Independent proposal by ImperiumGroup &middot; Not affiliated with, endorsed by, or commissioned by Express, Inc. or WHP Global &middot; <a href="index.html#about">Read the disclosure</a>
@@ -200,13 +416,25 @@
             <a href="pilot-program.html">Pilot Model</a>
             <a href="faq.html" class="current">FAQ</a>
         </div>
+        <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation">MENU</button>
         <div class="terminal-header-text">REF: EXPR-2026 // OPEN RESOURCE</div>
     </nav>
+    <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+    <aside id="mobile-menu" class="mobile-menu" tabindex="-1" aria-label="Mobile navigation">
+        <div class="menu-kicker">NAVIGATION // PROJECT EXPRESSTORATION</div>
+        <a href="index.html"><span>01</span> Proposal</a>
+        <a href="methodology.html"><span>02</span> Methodology</a>
+        <a href="precedents.html"><span>03</span> Precedents</a>
+        <a href="pilot-program.html"><span>04</span> Pilot Model</a>
+        <a href="faq.html"><span>05</span> FAQ</a>
+        <a href="license.html"><span>06</span> License</a>
+    </aside>
+
 
     <section class="page-hero">
         <span class="mono-label" style="color:var(--neon-cyan);">Appendix D</span>
         <h1>FREQUENTLY<br>ASKED</h1>
-        <p>The questions this proposal gets asked most — starting with the one that matters most.</p>
+        <p>The questions this proposal gets asked most - starting with the one that matters most.</p>
     </section>
 
     <!-- Status & Origin -->
@@ -235,7 +463,7 @@
                 <details>
                     <summary>Why publish a strategy proposal for a company that didn't ask for one?</summary>
                     <div class="faq-answer">
-                        <p>As a demonstration — built and presented the way a real capital-allocation memo would be, rather than as a hypothetical exercise. Publishing it openly instead of pitching it privately is a deliberate choice: it lets the reasoning be checked, criticized, and reused by anyone, not just one intended recipient.</p>
+                        <p>As a demonstration - built and presented the way a real capital-allocation memo would be, rather than as a hypothetical exercise. Publishing it openly instead of pitching it privately is a deliberate choice: it lets the reasoning be checked, criticized, and reused by anyone, not just one intended recipient.</p>
                     </div>
                 </details>
             </li>
@@ -243,7 +471,7 @@
                 <details>
                     <summary>Does ImperiumGroup have access to Express's internal data?</summary>
                     <div class="faq-answer">
-                        <p>No. Nothing in this proposal is derived from Express's or WHP Global's actual internal financials, real estate data, or operational reporting. Every estimate is built from public sources or general industry benchmarks, and labeled accordingly — see the <a href="methodology.html">Methodology & Figure Ledger</a>.</p>
+                        <p>No. Nothing in this proposal is derived from Express's or WHP Global's actual internal financials, real estate data, or operational reporting. Every estimate is built from public sources or general industry benchmarks, and labeled accordingly - see the <a href="methodology.html">Methodology & Figure Ledger</a>.</p>
                     </div>
                 </details>
             </li>
@@ -260,7 +488,7 @@
                 <details>
                     <summary>Where do the percentages and dollar figures come from?</summary>
                     <div class="faq-answer">
-                        <p>Every quantitative claim on the site carries a confidence tag — <strong>SOURCED</strong> (tied to a named public reference), <strong>MODELED</strong> (calculated from public industry benchmarks), or <strong>DIRECTIONAL</strong> (a reasoned estimate with no clean benchmark available). The full breakdown, including every figure used, is in the <a href="methodology.html">figure ledger</a>.</p>
+                        <p>Every quantitative claim on the site carries a confidence tag - <strong>SOURCED</strong> (tied to a named public reference), <strong>MODELED</strong> (calculated from public industry benchmarks), or <strong>DIRECTIONAL</strong> (a reasoned estimate with no clean benchmark available). The full breakdown, including every figure used, is in the <a href="methodology.html">figure ledger</a>.</p>
                     </div>
                 </details>
             </li>
@@ -293,7 +521,7 @@
                 <details>
                     <summary>Can Express or WHP Global actually use these ideas?</summary>
                     <div class="faq-answer">
-                        <p>Yes, freely. Everything on this site — the strategy, the copy, the design system — is published under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 license</a>. Express, WHP Global, or anyone else may use, adapt, or ignore any part of it, with or without credit, for any purpose, at no cost.</p>
+                        <p>Yes, freely. Everything on this site - the strategy, the copy, the design system - is published under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 license</a>. Express, WHP Global, or anyone else may use, adapt, or ignore any part of it, with or without credit, for any purpose, at no cost.</p>
                     </div>
                 </details>
             </li>
@@ -301,7 +529,7 @@
                 <details>
                     <summary>Is the "Open License" section a real legal instrument?</summary>
                     <div class="faq-answer">
-                        <p>It's a good-faith public license grant under CC BY 4.0, not a negotiated contract or a binding legal filing. It's meant to remove any ambiguity about whether these ideas are free to use — they are.</p>
+                        <p>It's a good-faith public license grant under CC BY 4.0, not a negotiated contract or a binding legal filing. It's meant to remove any ambiguity about whether these ideas are free to use - they are.</p>
                     </div>
                 </details>
             </li>
@@ -309,7 +537,7 @@
                 <details>
                     <summary>Can I reuse the site's design system or code for my own project?</summary>
                     <div class="faq-answer">
-                        <p>Yes — the same CC BY 4.0 license covers the design system and code, not just the strategy content. Attribution is appreciated but not required.</p>
+                        <p>Yes - the same CC BY 4.0 license covers the design system and code, not just the strategy content. Attribution is appreciated but not required.</p>
                     </div>
                 </details>
             </li>
@@ -331,11 +559,50 @@
             <a href="pilot-program.html">Pilot Model</a>
             <a href="index.html#about">Disclosure</a>
             <a href="sitemap.xml">Sitemap</a>
+            <a href="license.html">License</a>
+            <a href="SECURITY.md">Security</a>
         </div>
         <div class="footer-disclaimer">
             ImperiumGroup is an independent collective and is not affiliated with, endorsed by, or sponsored by Express, Inc. or WHP Global. This is an unofficial, speculative proposal distributed for open discussion of retail strategy.
         </div>
     </footer>
+
+
+    <script>
+        (() => {
+            const progress = document.querySelector('.scroll-progress');
+            const nav = document.querySelector('nav');
+            const menu = document.querySelector('.mobile-menu');
+            const backdrop = document.querySelector('.mobile-menu-backdrop');
+            const toggle = document.querySelector('.mobile-nav-toggle');
+
+            const updateChrome = () => {
+                const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+                const ratio = scrollable > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollable)) : 0;
+                if (progress) progress.style.width = (ratio * 100) + '%';
+                if (nav) nav.classList.toggle('scrolled', window.scrollY > 12);
+            };
+
+            const setMenu = (open) => {
+                if (!menu || !backdrop || !toggle) return;
+                menu.classList.toggle('open', open);
+                backdrop.classList.toggle('open', open);
+                document.body.classList.toggle('menu-open', open);
+                toggle.setAttribute('aria-expanded', String(open));
+                toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+                if (open) menu.focus();
+            };
+
+            if (toggle) toggle.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+            if (backdrop) backdrop.addEventListener('click', () => setMenu(false));
+            if (menu) menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape') setMenu(false);
+            });
+            window.addEventListener('scroll', updateChrome, { passive: true });
+            updateChrome();
+        })();
+    </script>
 
 </body>
 </html>
