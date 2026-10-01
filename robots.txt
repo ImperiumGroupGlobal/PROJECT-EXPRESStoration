@@ -6,8 +6,12 @@ Disallow: /.github/
 # Explicit search access for AI-powered search systems.
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /tests/
+Disallow: /.github/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /tests/
+Disallow: /.github/
 
 Sitemap: https://project-expresstoration.pages.dev/sitemap.xml
