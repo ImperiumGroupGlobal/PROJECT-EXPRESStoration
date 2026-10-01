@@ -4,3 +4,16 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
   Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://w.soundcloud.com; connect-src 'self'; upgrade-insecure-requests
+
+
+/*
+  Fresh-content policy for static documents and site styles.
+  Prevents browsers/CDNs from holding an old rendered page after a deployment.
+*/
+/*.html
+  Cache-Control: no-cache, must-revalidate
+  Vary: Accept-Encoding
+
+/assets/*
+  Cache-Control: no-cache, must-revalidate
+  Vary: Accept-Encoding
