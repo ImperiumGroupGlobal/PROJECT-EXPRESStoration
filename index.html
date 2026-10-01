@@ -475,14 +475,14 @@
         <strong>[ UNOFFICIAL ]</strong> Independent proposal by ImperiumGroup &middot; Not affiliated with, endorsed by, or commissioned by Express, Inc. or WHP Global &middot; <a href="#about">Read the disclosure</a>
     </div>
 
-    <nav>
+    <nav aria-label="Primary">
         <a href="index.html" class="brand-lockup">
             IMPERIUMGROUP
             <span class="divider">✕</span>
             <span class="target-name">TARGET: EXPRESS</span>
         </a>
-        <div class="nav-links">
-            <a href="#initiatives">Initiatives</a>
+        <div class="nav-links" aria-label="Primary navigation">
+            <a href="#initiatives" aria-current="page">Initiatives</a>
             <a href="methodology.html">Methodology</a>
             <a href="precedents.html">Precedents</a>
             <a href="pilot-program.html">Pilot Model</a>
@@ -496,13 +496,13 @@
         <div>
             <div class="hero-eyebrow">
                 <span class="mono-label" style="color:var(--neon-cyan); margin-bottom:0;">EBITDA OPTIMIZATION MEMORANDUM</span>
-                <span class="status-badge white">DRAFT PROPOSAL</span>
+                <span class="status-badge white">PUBLIC PROPOSAL</span>
             </div>
             <h1>PROJECT<br>EXPRE<span class="target">SS</span>TORATION</h1>
             <p>An independent operational and visual turnaround blueprint, proposing a path back to relevance for a legacy nightlife-fashion retailer through disciplined capital allocation and sensory-first store design.</p>
 
             <div class="hero-actions">
-                <button onclick="triggerPdfCompilation()" class="neon-btn" id="download-btn">Download Memo (PDF)</button>
+                <button onclick="printProposal()" class="neon-btn" id="download-btn">Print / Save as PDF</button>
                 <a href="#initiatives" class="neon-btn ghost">Review the Pillars</a>
             </div>
 
@@ -669,7 +669,7 @@
 
         <div class="legal-safe-harbor">
             <strong>[ OPEN LICENSE ]</strong><br><br>
-            Everything in this proposal — the concepts, the copy, the design system — is published under a Creative Commons Attribution 4.0 license. Express, Inc., WHP Global, or anyone else is free to use, adapt, or ignore any part of it, with or without credit. Nothing here is offered in exchange for compensation, and nothing here should be construed as a legal filing, contract, or binding instrument — it's a good-faith declaration that these ideas are free to take. Common questions about this: <a href="faq.html#licensing" style="color:var(--neon-cyan); text-decoration:underline;">see the FAQ</a>.
+            Everything in this proposal — the concepts, the copy, the design system, and original code — is published under a Creative Commons Attribution 4.0 license. Anyone may use, adapt, or ignore the material, subject to the attribution and other terms of CC BY 4.0. Nothing here is offered in exchange for compensation, and nothing here should be construed as a legal filing, contract, or binding instrument — it's a good-faith declaration that these ideas are free to take. Common questions about this: <a href="faq.html#licensing" style="color:var(--neon-cyan); text-decoration:underline;">see the FAQ</a>.
         </div>
     </section>
 
@@ -705,24 +705,8 @@
             document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
         });
 
-        function triggerPdfCompilation() {
-            const btn = document.getElementById('download-btn');
-            const originalText = btn.innerText;
-            btn.innerText = "COMPILING METRICS...";
-            btn.style.borderColor = "var(--neon-red)";
-            btn.style.color = "var(--neon-red)";
-            btn.style.boxShadow = "0 0 30px rgba(255, 0, 60, 0.4)";
-
-            setTimeout(() => {
-                btn.innerText = "GENERATING PDF...";
-                setTimeout(() => {
-                    window.print();
-                    btn.innerText = originalText;
-                    btn.style.borderColor = "var(--neon-cyan)";
-                    btn.style.color = "var(--neon-cyan)";
-                    btn.style.boxShadow = "0 0 15px rgba(0, 243, 255, 0.2)";
-                }, 1000);
-            }, 1000);
+        function printProposal() {
+            window.print();
         }
     </script>
 </body>
