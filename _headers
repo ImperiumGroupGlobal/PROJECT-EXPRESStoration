@@ -1,3 +1,7 @@
+# Global security policy.
+# Cloudflare Pages automatically determines the asset MIME type.
+# HTML is explicitly declared below so browsers never treat a page as a generic text asset.
+
 /*
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
@@ -5,8 +9,10 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
   Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://w.soundcloud.com; connect-src 'self'; upgrade-insecure-requests
 
-# Fresh-content policy for the static site.
+# Never reuse stale HTML during active site development.
+# The explicit Content-Type also protects against a misclassified static response.
 /*.html
+  Content-Type: text/html; charset=UTF-8
   Cache-Control: no-store
 
 /assets/*
