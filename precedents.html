@@ -168,8 +168,224 @@
             footer { flex-direction: column; gap: 1.75rem; padding: 3rem 2rem; text-align: left; }
         }
     </style>
+
+        /* 2026 site-system upgrade */
+        ::selection { background: var(--neon-cyan); color: #000; }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 20px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+
+        body { text-rendering: optimizeLegibility; }
+        img, iframe { max-width: 100%; }
+        button, a { -webkit-tap-highlight-color: transparent; }
+
+        .scroll-progress {
+            position: fixed;
+            inset: 0 0 auto 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon-cyan);
+            box-shadow: 0 0 14px rgba(0,243,255,.7);
+            z-index: 1000;
+            transform-origin: left center;
+            pointer-events: none;
+        }
+
+        nav {
+            transition: background .25s ease, border-color .25s ease, padding .25s ease;
+        }
+        nav.scrolled {
+            background: rgba(0,0,0,.94);
+            border-bottom-color: #303030;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .brand-lockup {
+            min-width: 0;
+            white-space: nowrap;
+        }
+        .brand-lockup:hover .target-name,
+        .brand-lockup:focus-visible .target-name {
+            border-color: #444;
+            color: #fff;
+        }
+
+        .nav-links a {
+            position: relative;
+            padding: .4rem 0;
+        }
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 100%;
+            bottom: 0;
+            height: 1px;
+            background: var(--neon-cyan);
+            transition: right .2s ease;
+        }
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after,
+        .nav-links a.current::after { right: 0; }
+
+        .mobile-nav-toggle {
+            display: none;
+            border: 1px solid var(--border);
+            background: #080808;
+            color: #fff;
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            cursor: pointer;
+            font: 700 .72rem/1 monospace;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+        .mobile-nav-toggle:hover,
+        .mobile-nav-toggle:focus-visible {
+            border-color: var(--neon-cyan);
+            color: var(--neon-cyan);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: min(88vw, 360px);
+            height: 100dvh;
+            padding: 92px 1.25rem 2rem;
+            background: rgba(4,4,4,.98);
+            border-left: 1px solid #222;
+            transform: translateX(100%);
+            transition: transform .25s ease;
+            z-index: 999;
+            box-shadow: -30px 0 80px rgba(0,0,0,.45);
+            overflow-y: auto;
+        }
+        .mobile-menu.open { transform: translateX(0); }
+        .mobile-menu-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.56);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .25s ease;
+            z-index: 998;
+        }
+        .mobile-menu-backdrop.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .mobile-menu .menu-kicker {
+            color: var(--neon-cyan);
+            font: 700 .68rem/1.4 monospace;
+            letter-spacing: .14em;
+            margin-bottom: 1rem;
+        }
+        .mobile-menu a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem 0;
+            color: #aaa;
+            text-decoration: none;
+            border-bottom: 1px solid #171717;
+            font: 700 1rem/1.2 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+        }
+        .mobile-menu a:hover,
+        .mobile-menu a:focus-visible,
+        .mobile-menu a.current {
+            color: #fff;
+        }
+        .mobile-menu a span {
+            color: #444;
+            font: .72rem monospace;
+        }
+        body.menu-open { overflow: hidden; }
+
+        .page-shell {
+            width: min(1440px, calc(100% - 2rem));
+            margin: 0 auto;
+        }
+
+        .section-container,
+        .terminal-dashboard,
+        .metric-card,
+        .data-readout,
+        .velvet-rope-module,
+        .faq-item,
+        .tier-card,
+        .phase-block,
+        .rollback-card {
+            transition: border-color .25s ease, background-color .25s ease, transform .25s ease, box-shadow .25s ease;
+        }
+
+        .metric-card:hover,
+        .tier-card:hover,
+        .phase-block:hover,
+        .rollback-card:hover {
+            border-color: #3b3b3b;
+            transform: translateY(-2px);
+        }
+
+        .section-heading h2,
+        .page-hero h1 {
+            text-wrap: balance;
+        }
+
+        .cta-inline:active,
+        .neon-btn:active {
+            transform: translateY(1px);
+        }
+
+        .site-signal-bar {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0,1fr));
+            gap: 1px;
+            margin: 0 auto;
+            max-width: 1100px;
+            border: 1px solid var(--border);
+            background: var(--border);
+        }
+        .site-signal {
+            background: #050505;
+            padding: 1.15rem 1.25rem;
+        }
+        .site-signal strong {
+            display: block;
+            margin-top: .3rem;
+            color: #fff;
+            font: 700 .9rem/1.2 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 1024px) {
+            nav { gap: 1rem; }
+            .mobile-nav-toggle { display: inline-grid; place-items: center; flex: 0 0 auto; }
+            .nav-links { display: none !important; }
+            .site-signal-bar { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 640px) {
+            .brand-lockup { font-size: .9rem; gap: .55rem; }
+            .brand-lockup .divider { display: none; }
+            .brand-lockup .target-name { font-size: .66rem; letter-spacing: .08em; padding: 3px 5px; }
+            .independence-strip { font-size: .62rem; letter-spacing: .05em; line-height: 1.45; }
+            .scroll-progress { height: 3px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            nav, .mobile-menu, .mobile-menu-backdrop, .metric-card, .tier-card,
+            .phase-block, .rollback-card { transition: none !important; }
+        }
+
 </head>
 <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
 
     <div class="independence-strip">
         <strong>[ UNOFFICIAL ]</strong> Independent proposal by ImperiumGroup &middot; Not affiliated with, endorsed by, or commissioned by Express, Inc. or WHP Global &middot; <a href="index.html#about">Read the disclosure</a>
@@ -188,20 +404,32 @@
             <a href="pilot-program.html">Pilot Model</a>
             <a href="faq.html">FAQ</a>
         </div>
+        <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation">MENU</button>
         <div class="terminal-header-text">REF: EXPR-2026 // OPEN RESOURCE</div>
     </nav>
+    <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+    <aside id="mobile-menu" class="mobile-menu" tabindex="-1" aria-label="Mobile navigation">
+        <div class="menu-kicker">NAVIGATION // PROJECT EXPRESSTORATION</div>
+        <a href="index.html"><span>01</span> Proposal</a>
+        <a href="methodology.html"><span>02</span> Methodology</a>
+        <a href="precedents.html"><span>03</span> Precedents</a>
+        <a href="pilot-program.html"><span>04</span> Pilot Model</a>
+        <a href="faq.html"><span>05</span> FAQ</a>
+        <a href="license.html"><span>06</span> License</a>
+    </aside>
+
 
     <section class="page-hero">
         <span class="mono-label" style="color:var(--neon-cyan);">Appendix B</span>
         <h1>PRECEDENTS &<br>COMPARABLES</h1>
-        <p>Two sourced case studies of comparable specialty-retail turnarounds, plus the real, public record of Express's own 2024 bankruptcy and ownership change — the ground this proposal is actually standing on.</p>
+        <p>Two sourced case studies of comparable specialty-retail turnarounds, plus the real, public record of Express's own 2024 bankruptcy and ownership change - the ground this proposal is actually standing on.</p>
     </section>
 
     <!-- Case Study 1: Abercrombie & Fitch -->
     <section class="section-container">
         <div class="section-heading">
             <span class="mono-label">Precedent 01</span>
-            <h2>ABERCROMBIE & FITCH — ATMOSPHERE + ASSORTMENT</h2>
+            <h2>ABERCROMBIE & FITCH - ATMOSPHERE + ASSORTMENT</h2>
             <p>The clearest public example of a mall-based specialty retailer pairing a store-experience reset with an assortment overhaul, and having the market respond.</p>
         </div>
 
@@ -211,7 +439,7 @@
                 <div class="case-sub">NYSE: ANF<br>Turnaround window: 2022–2024</div>
             </div>
             <div>
-                <p>Following the August 2022 appointment of CEO Richard Dickson (previously president at Mattel), Abercrombie & Fitch executed a multi-year repositioning across brand identity, merchandising discipline, and store format — closing underperforming flagship locations in favor of a more localized store strategy.</p>
+                <p>Following the August 2022 appointment of CEO Richard Dickson (previously president at Mattel), Abercrombie & Fitch executed a multi-year repositioning across brand identity, merchandising discipline, and store format - closing underperforming flagship locations in favor of a more localized store strategy.</p>
 
                 <div class="stat-row">
                     <div class="stat-box">
@@ -228,14 +456,14 @@
                     </div>
                 </div>
 
-                <p>S&P Global Ratings cited improved merchandising, inventory management, and financial discipline as the basis for its upgrade, noting the Hollister brand's own turnaround — 6% sales growth in 2023 after a 9% decline the year prior — following transformation initiatives launched in 2022. Store remodels executed in 2024 delivered measurable sales-density gains alongside occupancy-cost-driven margin accretion, according to industry analysis of the rollout.</p>
+                <p>S&P Global Ratings cited improved merchandising, inventory management, and financial discipline as the basis for its upgrade, noting the Hollister brand's own turnaround - 6% sales growth in 2023 after a 9% decline the year prior - following transformation initiatives launched in 2022. Store remodels executed in 2024 delivered measurable sales-density gains alongside occupancy-cost-driven margin accretion, according to industry analysis of the rollout.</p>
 
                 <div class="translation-box">
                     <span class="mono-label">What This Validates for Express</span>
-                    <p>A&F's remodel-driven sales-density lift is the closest public analog available for Pillar I (Atmospheric CapEx Optimization). It's evidence that store-environment investment can move revenue per square foot at a comparable mall-based specialty retailer — not proof it will happen at Express, but a real precedent worth citing to a capital committee skeptical that "atmosphere" spend pays for itself.</p>
+                    <p>A&F's remodel-driven sales-density lift is the closest public analog available for Pillar I (Atmospheric CapEx Optimization). It's evidence that store-environment investment can move revenue per square foot at a comparable mall-based specialty retailer - not proof it will happen at Express, but a real precedent worth citing to a capital committee skeptical that "atmosphere" spend pays for itself.</p>
                 </div>
 
-                <p class="source-tag">Sources: Retail Dive, Forbes — see full list below.</p>
+                <p class="source-tag">Sources: Retail Dive, Forbes - see full list below.</p>
             </div>
         </div>
     </section>
@@ -244,8 +472,8 @@
     <section class="section-container" style="background:#050505;">
         <div class="section-heading">
             <span class="mono-label">Precedent 02</span>
-            <h2>INDITEX / ZARA — RAPID-CYCLE MANUFACTURING</h2>
-            <p>The reference model behind Pillar II's inventory-velocity strategy — not proposed as a full supply-chain replacement, but as the mechanism worth partially adapting for a limited capsule line.</p>
+            <h2>INDITEX / ZARA - RAPID-CYCLE MANUFACTURING</h2>
+            <p>The reference model behind Pillar II's inventory-velocity strategy - not proposed as a full supply-chain replacement, but as the mechanism worth partially adapting for a limited capsule line.</p>
         </div>
 
         <div class="case-study">
@@ -254,7 +482,7 @@
                 <div class="case-sub">Inditex Group<br>Model: est. since 1990s</div>
             </div>
             <div>
-                <p>Zara's model is built on vertically integrated, near-shore production — over half of its output comes from factories in Spain, Portugal, Turkey, and Morocco, rather than the Asia-based, long-lead-time sourcing most competitors rely on. That proximity is what makes the compressed timeline possible.</p>
+                <p>Zara's model is built on vertically integrated, near-shore production - over half of its output comes from factories in Spain, Portugal, Turkey, and Morocco, rather than the Asia-based, long-lead-time sourcing most competitors rely on. That proximity is what makes the compressed timeline possible.</p>
 
                 <div class="stat-row">
                     <div class="stat-box">
@@ -271,14 +499,14 @@
                     </div>
                 </div>
 
-                <p>The mechanism is straightforward: smaller production batches tested in-market before scaling, rather than bulk pre-season commitments. Frequently reported industry figures put Zara's markdown rate at roughly half the industry average — the direct financial consequence of not overcommitting to designs before real demand signal exists.</p>
+                <p>The mechanism is straightforward: smaller production batches tested in-market before scaling, rather than bulk pre-season commitments. Frequently reported industry figures put Zara's markdown rate at roughly half the industry average - the direct financial consequence of not overcommitting to designs before real demand signal exists.</p>
 
                 <div class="translation-box">
                     <span class="mono-label">What This Validates for Express</span>
-                    <p>We are not proposing Express replicate Inditex's vertically integrated manufacturing footprint — that's a multi-year, multi-hundred-million-dollar undertaking outside this proposal's scope. We're proposing the same underlying logic — small-batch, in-market-tested production — applied narrowly to a "going-out capsule" line, where trend risk is highest and markdown exposure is worst under the current model.</p>
+                    <p>We are not proposing Express replicate Inditex's vertically integrated manufacturing footprint - that's a multi-year, multi-hundred-million-dollar undertaking outside this proposal's scope. We're proposing the same underlying logic - small-batch, in-market-tested production - applied narrowly to a "going-out capsule" line, where trend risk is highest and markdown exposure is worst under the current model.</p>
                 </div>
 
-                <p class="source-tag">Sources: industry supply-chain analysis, Harvard Business Review (markdown-rate figure, as cited across multiple secondary sources) — see full list below.</p>
+                <p class="source-tag">Sources: industry supply-chain analysis, Harvard Business Review (markdown-rate figure, as cited across multiple secondary sources) - see full list below.</p>
             </div>
         </div>
     </section>
@@ -297,16 +525,16 @@
                 <div class="case-sub">Ch. 11 filed: Apr 22, 2024<br>Sale closed: Jun 2024</div>
             </div>
             <div>
-                <p>In December 2022, Express entered a brand-management partnership with WHP Global, which took a majority stake in an IP joint venture valuing the Express brand at roughly $400 million. Despite that capital injection and a September 2023 CEO change, Express was delisted from the NYSE on March 6, 2024, and filed for Chapter 11 bankruptcy on April 22, 2024 — closing 95 Express stores and all UpWest locations immediately.</p>
+                <p>In December 2022, Express entered a brand-management partnership with WHP Global, which took a majority stake in an IP joint venture valuing the Express brand at roughly $400 million. Despite that capital injection and a September 2023 CEO change, Express was delisted from the NYSE on March 6, 2024, and filed for Chapter 11 bankruptcy on April 22, 2024 - closing 95 Express stores and all UpWest locations immediately.</p>
 
-                <p>A consortium — WHP Global alongside mall landlords Simon Property Group, Brookfield Properties, and Centennial Real Estate — formed a joint venture named <strong>Phoenix Retail</strong> and acquired the majority of Express's operating assets out of bankruptcy for approximately $174 million, in a sale approved by the bankruptcy court on June 14, 2024. Around 450 Express and Bonobos stores, and roughly 7,000 jobs, were retained under the new ownership structure.</p>
+                <p>A consortium - WHP Global alongside mall landlords Simon Property Group, Brookfield Properties, and Centennial Real Estate - formed a joint venture named <strong>Phoenix Retail</strong> and acquired the majority of Express's operating assets out of bankruptcy for approximately $174 million, in a sale approved by the bankruptcy court on June 14, 2024. Around 450 Express and Bonobos stores, and roughly 7,000 jobs, were retained under the new ownership structure.</p>
 
                 <div class="translation-box">
                     <span class="mono-label">Why This Matters for This Proposal</span>
-                    <p>Phoenix Retail's ownership group includes two of the largest mall landlords in the US. That's structurally relevant: a landlord-inclusive ownership structure has a direct incentive in store-level foot traffic and dwell time, not just brand licensing revenue — which is exactly the lever Pillar I and Pillar III are built around. We think that alignment is what makes a pilot-scale atmosphere and logistics test more plausible to greenlight now than it would have been under the pre-bankruptcy ownership structure.</p>
+                    <p>Phoenix Retail's ownership group includes two of the largest mall landlords in the US. That's structurally relevant: a landlord-inclusive ownership structure has a direct incentive in store-level foot traffic and dwell time, not just brand licensing revenue - which is exactly the lever Pillar I and Pillar III are built around. We think that alignment is what makes a pilot-scale atmosphere and logistics test more plausible to greenlight now than it would have been under the pre-bankruptcy ownership structure.</p>
                 </div>
 
-                <p class="source-tag">Sources: SEC filings, CNBC, Bloomberg, Retail Dive, Retail TouchPoints — see full list below.</p>
+                <p class="source-tag">Sources: SEC filings, CNBC, Bloomberg, Retail Dive, Retail TouchPoints - see full list below.</p>
             </div>
         </div>
     </section>
@@ -319,7 +547,7 @@
             <p>Every fact cited above traces to one of these. Figures pulled from secondary reporting are cross-referenced against the underlying primary filing where one exists.</p>
         </div>
         <ul class="sources-list">
-            <li><span class="src-name">Express, Inc. — 8-K, Apr 2024</span><a href="https://www.sec.gov/Archives/edgar/data/0001483510/000119312524103828/d827429dex991.htm" target="_blank" rel="noopener noreferrer">SEC.gov — Chapter 11 filing announcement</a></li>
+            <li><span class="src-name">Express, Inc. - 8-K, Apr 2024</span><a href="https://www.sec.gov/Archives/edgar/data/0001483510/000119312524103828/d827429dex991.htm" target="_blank" rel="noopener noreferrer">SEC.gov - Chapter 11 filing announcement</a></li>
             <li><span class="src-name">Retail Dive</span><a href="https://www.retaildive.com/news/express-bonobos-acquired-bankruptcy-simon-brookfield-centennial-whp-global/719103/" target="_blank" rel="noopener noreferrer">Express, Bonobos bought out of bankruptcy for $174M</a></li>
             <li><span class="src-name">Retail TouchPoints</span><a href="https://www.retailtouchpoints.com/news/whp-simon-brookfield-unite-under-phoenix-retail-banner-to-acquire-express/144011/" target="_blank" rel="noopener noreferrer">WHP, Simon, Brookfield unite under Phoenix Retail banner</a></li>
             <li><span class="src-name">CNBC</span><a href="https://www.cnbc.com/2024/04/22/express-files-for-bankruptcy-plans-to-close-nearly-100-stores.html" target="_blank" rel="noopener noreferrer">Express files for bankruptcy, plans store closures</a></li>
@@ -344,11 +572,50 @@
             <a href="pilot-program.html">Pilot Model</a>
             <a href="index.html#about">Disclosure</a>
             <a href="sitemap.xml">Sitemap</a>
+            <a href="license.html">License</a>
+            <a href="SECURITY.md">Security</a>
         </div>
         <div class="footer-disclaimer">
             ImperiumGroup is an independent collective and is not affiliated with, endorsed by, or sponsored by Express, Inc. or WHP Global. This is an unofficial, speculative proposal distributed for open discussion of retail strategy.
         </div>
     </footer>
+
+
+    <script>
+        (() => {
+            const progress = document.querySelector('.scroll-progress');
+            const nav = document.querySelector('nav');
+            const menu = document.querySelector('.mobile-menu');
+            const backdrop = document.querySelector('.mobile-menu-backdrop');
+            const toggle = document.querySelector('.mobile-nav-toggle');
+
+            const updateChrome = () => {
+                const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+                const ratio = scrollable > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollable)) : 0;
+                if (progress) progress.style.width = (ratio * 100) + '%';
+                if (nav) nav.classList.toggle('scrolled', window.scrollY > 12);
+            };
+
+            const setMenu = (open) => {
+                if (!menu || !backdrop || !toggle) return;
+                menu.classList.toggle('open', open);
+                backdrop.classList.toggle('open', open);
+                document.body.classList.toggle('menu-open', open);
+                toggle.setAttribute('aria-expanded', String(open));
+                toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+                if (open) menu.focus();
+            };
+
+            if (toggle) toggle.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+            if (backdrop) backdrop.addEventListener('click', () => setMenu(false));
+            if (menu) menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape') setMenu(false);
+            });
+            window.addEventListener('scroll', updateChrome, { passive: true });
+            updateChrome();
+        })();
+    </script>
 
 </body>
 </html>
