@@ -20,6 +20,7 @@ REQUIRED_FILES = [
     "_headers",
     "robots.txt",
     "sitemap.xml",
+    "llms.txt",
 ]
 
 
@@ -105,6 +106,26 @@ def main() -> int:
     for page in ["index.html", "methodology.html", "precedents.html", "pilot-program.html", "faq.html", "license.html"]:
         if page != "index.html" and page not in sitemap:
             fail(f"sitemap.xml missing {page}")
+
+    robots_lines = robots.splitlines()
+    if "User-agent: OAI-SearchBot" not in robots_lines or "Allow: /" not in robots_lines:
+        fail("robots.txt must allow OAI-SearchBot")
+    if "User-agent: PerplexityBot" not in robots_lines:
+        fail("robots.txt must declare PerplexityBot access")
+    if "Sitemap: https://project-expresstoration.pages.dev/sitemap.xml" not in robots:
+        fail("robots.txt sitemap reference is missing")
+
+    llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
+    for required in [
+        "https://project-expresstoration.pages.dev/",
+        "https://project-expresstoration.pages.dev/methodology.html",
+        "https://project-expresstoration.pages.dev/precedents.html",
+        "https://project-expresstoration.pages.dev/pilot-program.html",
+        "https://project-expresstoration.pages.dev/faq.html",
+        "https://project-expresstoration.pages.dev/license.html",
+    ]:
+        if required not in llms:
+            fail(f"llms.txt missing canonical URL: {required}")
 
     print(f"PASS: validated {len(HTML_FILES)} HTML pages and repository metadata")
     return 0
